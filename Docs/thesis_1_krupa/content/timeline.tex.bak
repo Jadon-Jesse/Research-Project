@@ -1,0 +1,54 @@
+\newpage
+\section{Project Timeline}
+%\begin{tabular}{| p{2cm} | p{3cm} |p{6cm}|p{6cm}} \hline
+%	\textbf{WEEK}& \textbf{DATE& \textbf{OBJECTIVES}&\textbf{DETAILS}
+%	\\\hline
+%\end{tabular}
+
+
+
+%\begin{flushleft}
+%
+%\begin{table}[htbp]
+%\caption{Proposed Project Schedule Timeline}
+%\vspace{\baselineskip}
+%\centering
+%\DTLdisplaydb{timeline}
+%\end{table}
+%
+%\end{flushleft}
+
+
+\begin{center}
+\begin{tabular}{ | m{1.5cm} | m{2cm}| m{4cm} |m{5cm} |} 
+\hline
+
+1	&15-21 May 	&(exams)	&	\\ \hline
+2	&22-28 May	&	&	\\ \hline
+3	&29 May -  4 June	&	&	\\ \hline
+4	&5-11 June	&	&	\\ \hline
+5	&12-18 June	&Implementation of BPP and selection of delivery  vehicles (bins)	&Part 1: sorting items, selection of subset of delivery vehicles and allotting items to bins in 1D and 2D	\\ \hline
+6	&19-25 June	&	&	\\ \hline
+7	&26 June- 2 July	&	&	\\ \hline
+8	&3-9 July	&	&	\\ \hline
+9	&10-16 July	&Implementation of TSP 	&Part 2 : finding the fastest/ shortest delivery route	\\ \hline
+10	&17-23 July	&	&	\\ \hline
+11	&24-30 July	&Daily exhaustive techniques	&Part 3: finding exhaustive techniques specifc to a delivery batch	\\ \hline
+12	&31 July-6 Aug	&	&	\\ \hline
+13	&7-13 Aug	&Extention to part 1 and 2	&Review techniques in relation to each other, and implement any improvements	\\ \hline
+14	&14-20 Aug	&	&	\\ \hline
+15	&21-27 Aug	&Documentation of results	&	\\ \hline
+16	&28 Aug-3 Sep	&	&	\\ \hline
+17	&4-10 Sep	&Extention: 3D implementation	&Implementation of BBP in 3D	\\ \hline
+18	&11-17 Sep	&	&	\\ \hline
+19	&18-24 Sep	&	&	\\ \hline
+20	&25 Sep - 1 Oct	&Finalising findings	&Documentation	\\ \hline
+21	&2-8 Oct	&	&	\\ \hline
+22	&9-16 Oct	&	&	\\ \hline
+
+
+
+\end{tabular}
+\end{center}
+
+

@@ -1,0 +1,183 @@
+
+[Info]
+
+name = "Niceland"
+displayname = "Niceland"
+versiondate = 1.0 RC2
+mugenversion = 1.1
+author = "RoySquadRocks"
+edit = "Yoshian12"
+
+--------------------------------------------------------
+
+[Camera]
+
+startx = 0
+starty = 0
+boundleft = -108
+boundright = 112
+boundhigh = -166
+boundlow = 0
+verticalfollow = .3
+floortension = 0
+tension = 50
+overdrawhigh = 0
+overdrawlow = 0
+cuthigh = 35
+cutlow = 25
+zoomout = .8
+zoomin = 1
+
+--------------------------------------------------------
+
+[PlayerInfo]
+
+--- Player 1 ---
+p1startx = -93
+p1starty = 0
+p1facing = 1
+
+--- Player 2 ---
+p2startx = 93
+p2starty = 0
+p2facing = -1
+
+--- Common ---
+leftbound = -1000
+rightbound = 1000
+
+--------------------------------------------------------
+
+[Bound]
+
+screenleft = 15
+screenright = 15
+
+--------------------------------------------------------
+
+[StageInfo]
+
+zoffset = 220
+autoturn = 1
+resetBG = 1
+localcoord = 426,240
+xscale = 1
+yscale = 1
+
+--------------------------------------------------------
+
+[Shadow]
+
+color = 0,0,0
+yscale = .3
+fade.range = 0,0
+
+--------------------------------------------------------
+
+[Reflection]
+
+intensity = 0
+
+--------------------------------------------------------
+
+[Music]
+
+bgmusic = sound/Balloon Fight.mp3
+;bgmloopstart = 1
+;bgmloopend = 99999999999999999999999999999
+bgmvolume = 100
+
+--------------------------------------------------------
+
+; [BG x]
+
+; type = ?
+; spriteno = ?, ?
+; start = ?, ?
+; delta = ?, ?
+; trans = ?
+; mask = ?
+; velocity = ?, ?
+; tile = ?, ?
+; tilespacing = ?, ?
+; Parallax-only:
+; xscale = ?, ?
+; width = ?, ?
+; yscalestart = ?
+; yscaledelta = ?
+
+--------------------------------------------------------
+
+[BGdef]
+
+spr = Niceland.sff
+debugbg = 0
+
+========================================================
+
+[BG n]
+
+type  = normal
+spriteno = 0, 0
+layerno = 0
+start = 0, 0
+delta = 1, 1
+trans = none
+;alpha = 256,0
+mask  = 0
+tile  = 1, 0
+tilespacing = 0,0
+;window = 0,0, 319, 239
+;windowdelta = 0,0
+
+--------------------------------------------------------
+
+[BG 4]
+
+type  = normal
+spriteno = 0, 3
+start = 0, 0
+delta = 1, 1
+mask = 0
+velocity = 0, 0
+tile = 1, 0
+tilespacing = 0, 0
+
+--------------------------------------------------------
+
+[BG 3]
+
+type  = normal
+spriteno = 0, 2
+start = 0, 184
+delta = 1, 1
+mask = 0
+velocity = 0.5, 0
+tile = 1, 0
+tilespacing = 0, 0
+
+--------------------------------------------------------
+
+[BG 2]
+
+type  = normal
+spriteno = 0, 1
+start = 0, 184
+delta = 1, 1
+mask = 0
+velocity = 0.5, 0
+tile = 1, 0
+tilespacing = 0, 0
+
+--------------------------------------------------------
+
+[BG 1]
+
+type  = normal
+spriteno = 0, 0
+start = 0, 185
+delta = 1, 1
+mask = 1
+velocity = 0, 0
+tile = 1, 0
+tilespacing = 0, 0

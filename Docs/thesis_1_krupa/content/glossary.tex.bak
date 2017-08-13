@@ -1,0 +1,17 @@
+%\section{Glossary}
+%
+%Default:
+%\begin{itemize}
+%  \item ISDYNSTP:  Is dynamic time step used ?
+%  \item ISCDCA:
+%  \item MVAR
+%  \item IS2TL
+%\end{itemize}
+%
+%Sorted:
+%\begin{sortedlist}
+%  \sortitem{ISDYNSTP:  Is dynamic time step used ?}
+%  \sortitem{ISCDCA:}
+%  \sortitem{MVAR}
+%  \sortitem{IS2TL}
+%\end{sortedlist}

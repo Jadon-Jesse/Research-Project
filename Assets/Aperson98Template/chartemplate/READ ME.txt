@@ -1,0 +1,12 @@
+ Character template by aperson98 version 1.0
+This a template I made that isn't really based on any one game just a general base character anyway enjoy.
+
+
+Moves-
+Projectile- D,DF,F X,Y, or A
+Hyper Move- F,D,DF X+Y (uses 1 super bar)
+
+
+-Credits-
+Jmorphman - for the Ken sprites though the colors were reduced to just 6 colors to encourage putting in new graphics and colors your own character.
+Acey- for some small bits of coding I took from EOH (super jump and damage scaling) Don't worry KFM is the base character to make err this base character.

@@ -1,0 +1,26 @@
+\newpage
+\section{Methodology}
+The procedure intended to be followed to satisfy the objectives of the project, entails initially doing extensive research on current studies and analysis of combinatorial optimization problems, followed by implementation of these techniques to the distribution problem.The distribution problem composes of three  parts: 
+\begin{enumerate}
+\item Bin Packing Problem,
+\item Traveling Salesman Problem, and
+\item the daily exhaustive parameter component.
+\end{enumerate}
+The implementation will be built up in terms of dimension. The initial implementation of the problem in one dimension, with three categories of the variable component: small, medium and large. The next phase will consider the problem in two dimensions. If time permits, the implementation of the problem considering all three dimensions of an item will be implemented. 
+
+
+\subsection{Part 1: The Bin Packing Problem}
+\begin{flushleft}
+The initial stage is to sort the list of deliverable items in an ordered  sequence, according to size. Categorizing the items, we can extract the total number of items per category (example: the number of  small, medium and large items). Using the dimensions of a large item, the total number of items and the number of items per category, an initial selection of vehicles (bins) that we will need to utilize Using each vehicle's carrying capacity information, we allocate item's to the delivery vehicle's using an proposed algorithm. 
+\end{flushleft}
+\begin{flushleft}
+In order to implement the sorting of the list of item, we can first  normalize the dimensions then use the Quick Sort technique to sort the list in ascending order. Quick sort is selected as on very large sets it has an average case and best case complexity of $\mathcal{O}(nlog(n))$ and worst case complexity of $\mathcal{O}(n^2)$. Quick Sort uses  no additional memory  and if the item list is sorted to some extent, they do not need to be adapted, however, it is not a very stable technique.  Looking at the total's of each category of item's, and the dimension's of the largest item's we make an initial selection of vehicles that will be used to deliver the goods using a greedy algorithm (FF,NF or BF) in order to gain an upper bound on the number of vehicles to select. We then improve the section using a metaheuristic technique, such as SA, to improve the distribution of items to delivery vehicles.  Implementation is conducted with the aim to obtain the minimum number of vehicles with which we can deliver the list of items that have been purchased, using the minimum number of delivery vehicles.
+\end{flushleft}
+\subsection{Part 2: Traveling Salesman Problem}
+\begin{flushleft}
+Next we consider the corresponding locations of delivery, specific to the list of items allocated  to each delivery vehicle. We generate  an adjacency matrix to store the distance required to get from one location to another. We first attempt finding the minimum length route to be taken using a greedy approach, such as the nearest neighbor algorithm, or exact solution techniques such as Branch-and-Bound algorithm, as well as, metaheurastic techniques such as Simulated Annealing, Genetic Algorithms and Tabu-Search. Using the results generated from various data sets, we hope to conclude which technique will be most suitable for different size of problems.  
+\end{flushleft}
+\subsection{Part 3: The daily exhaustive parameters}
+\begin{flushleft}
+Looking at the problem with a finer comb, we hope to find parameters that we can exhaust specific to a particular day order. We consider cases where the route has to be re-routed as a result of cancellation and the rescheduling of time of delivery. 
+\end{flushleft}

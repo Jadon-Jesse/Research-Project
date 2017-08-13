@@ -1,0 +1,91 @@
+\newpage
+\begin{thebibliography}{9}
+%%%%%%%%%HISTORY REFERENCES FOR INTRO%%%%%%%%%%%%%%%
+\bibitem{TSP_hist1}\label{TSP_hist1}
+ T.C. Hu. "Decomposition in traveling salesman type problems".  Proceedings
+of IFORS, Session A, Theory of Graphs, September 1966, pp. A34-
+A44
+
+\bibitem{TSP_hist2}\label{TSP_hist2}
+Lawler, E. L., Lenstra, J. K., Rinnooy Kan, A. H., and Shmoys, D. B. (Eds.). (1995). "The Traveling Salesman Problem". John Wiley and Sons Ltd.
+
+\bibitem{TSP_hist3}\label{TSP_hist3}
+Dantzig, G., Fulkerson, R. and Johnson, S., 1954. "Solution of a large-scale traveling-salesman problem". Journal of the operations research society of America, 2(4), pp.393-410.
+
+\bibitem{TSP_litSurvey}\label{TSP_litSurvey}
+Rao, A., Hegde, K., Rao, A., Hegde, K., Rao, I., Hegde, K., Rao, A. and Hegde, S.K., 2015. "Literature survey on travelling salesman problem using genetic algorithms". International Journal of Advanced Research in Eduation Technology (IJARET), 2(1), p.42.
+
+\bibitem{CSP_hist1}\label{CSP_hist1}
+ T.C. Hu. “Two-commodity cut-packing problem,” Journal of Mathematical
+Programming, vol. 4, no. 1, February 1973, pp. 108-109.
+
+\bibitem{BPP_hist2}\label{BPP_hist2}
+Garey, M.R. and Johnson, D.S., 1979. "Computers and intractability: a guide to the theory of NP-completeness". 1979. San Francisco, LA: Freeman, 58.
+
+\bibitem{BBP_recentAd}\label{BBP_recentAd}
+Crainic, T., Perboli, G. and Tadei, R., 2012. "Recent advances in multi-dimensional packing problems "(pp. 91-110). Available from: http://www. intechopen. com/books/new-technologies-trends-innovations-and-research/recent-advances-in-multi-dimensional-packing-problems.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\bibitem{Luca} 
+Trevisan, Luca. Combinatorial Optimization: Exact And Approximate Algorithms. 1st ed. San Francisco: N.p., 2011. Web.
+
+\bibitem{kpsDef}\label{kpsDef}
+Mathews, G. B. (25 June 1897). On the partition of numbers (PDF). Proceedings of the London Mathematical Society. 28: 486–490. doi:10.1112/plms/s1-28.1.486.
+
+\bibitem{kps_NP}\label{kps_NP}
+Pisinger, D., 2007. The quadratic knapsack problem—a survey. Discrete applied mathematics, 155(5), pp.623-648.
+%@article{pisinger2007quadratic,
+%  title={The quadratic knapsack problem—a survey},
+%  author={Pisinger, David},
+%  journal={Discrete applied mathematics},
+%  volume={155},
+%  number={5},
+%  pages={623--648},
+%  year={2007},
+%  publisher={Elsevier}
+%}
+
+\bibitem{TSP_Ali6}\label{TSP_Ali6}
+Shmoys, David B. and Rinnooy Kan, Alexander H. G. and Lenstra, Jan K. and
+Lawler, Eugene L. (1987), The Traveling Salesman Problem: A Guided Tour of
+Combinatorial Optimization, 1st Edition, J. Wiley and sons, Chichester, New York,
+Brisbane.
+
+
+\bibitem{TSP_hueristicsTSP}\label{TSP_hueristicsTSP}
+Nilsson, Christian. Heuristics For The Traveling Salesman Problem. 1st ed. Link¨oping University: N.p. Web. 10 May 2017.
+
+\bibitem{hTSP_lowerbound}\label{hTSP_lowerbound}
+D.S. Johnson, L.A. McGeoch, E.E. Rothberg, “Asymptotic Experimental Analysis for the HeldKarp Traveling Salesman Bound” Proceedings of the Annual ACM-SIAM Symposium on Discrete Algorithms, 1996, pp. 341-350.
+
+
+\bibitem{hTSP_NN}\label{hTSP_NN}
+D.S. Johnson and L.A. McGeoch, “The Traveling
+Salesman Problem: A Case Study in Local Optimization”,
+November 20, 1995.
+
+
+\bibitem{SA_5}\label{SA_5}
+Rutenbar, R.A., 1989. " Simulated annealing algorithms: An overview". IEEE Circuits and Devices Magazine, 5(1), pp.19-26.
+
+\bibitem{SA_HC_7}\label{SA_HC_7}
+Patrick, K., 2012. "Comparison of simulated annealing and hill climbing in the course timetabling problem". African Journal of Mathematics and Computer Science Research, 5(11), pp.176-178.
+
+\bibitem{hBPP_1}\label{hBPP_1} 
+Yesodha, R. and Amudha, T., 2012. "A comparative study on heuristic procedures to solve bin packing problems". International Journal in Foundations of Computer Science and Technology, 2(6), pp.37-49.
+
+
+\bibitem{GA_BPP_8}\label{GA_BPP_8}
+Junkermeier, J., A Genetic Algorithm for the Bin Packing Problem.
+
+\bibitem{exactsol_8}\label{exactsol_8}
+Schwerin, P. and Wäscher, G., 1997. "The bin-packing problem: A problem generator and some numerical experiments with FFD packing and MTP". International Transactions in Operational Research, 4(5-6), pp.377-389.
+
+\bibitem{LR1_cirrelet}\label{LR1_cirrelet}
+Baldi, M.M. et al., 2017. "The Generalized Bin Packing Problem with Bin-Dependent Item Profits".
+
+\bibitem{Bayir_2017}\label{Bayir_2017}
+Beyaz, M., Dokeroglu, T. and Cosar, A., 2015." Robust hyper-heuristic algorithms for the offline oriented/non-oriented 2D bin packing problems". Applied Soft Computing, 36, pp.236-245.
+
+\bibitem {BB_ALI37}\label{BB_ALI37}
+M. J. Brusco and S. Stahl. "Branch–and–Bound Applications in Combinatorial Data". Analysis Springer Science + Business Media, Inc., 1st Edition, 2005.
+\end{thebibliography}

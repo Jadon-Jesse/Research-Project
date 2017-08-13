@@ -1,0 +1,27 @@
+;***************************************************************************;
+;******************* Created in Fighter Factory Ultimate *******************;
+;*******************      http://www.virtualltek.com     *******************;
+;***************************************************************************;
+
+[Info]
+name = "Aperson98's char template"
+displayname = "char template"
+versiondate = 2/5/2012
+mugenversion = 1.0
+author = "aperson98"
+pal.defaults = 1,2
+
+[Files]
+sprite = chartemplate.sff
+anim = chartemplate.air
+sound = chartemplate.snd
+cmd = chartemplate.cmd
+cns = chartemplate.cns
+stcommon = common1.cns
+st = chartemplate.cns
+pal1 = Player1.act
+pal2 = Player2.act
+
+[Arcade]
+;intro.storyboard = 
+;ending.storyboard = 
