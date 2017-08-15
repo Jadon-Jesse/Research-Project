@@ -2,7 +2,7 @@
 M.U.G.E.N ver 1.00 (2010.06.29) status log
 ------------------------------------------
 Parsing command line...
-Command line: C:\Users\Jadon\Work Space 4Y\RP\MUGEN\mugen-1.0\mugen\mugen.exe kfm ff3_0  -p2.ai -rounds
+Command line: C:\Users\Jadon\Work Space 4Y\RP\MUGEN\mugen-1.0\mugen\mugen.exe
 Parse command line OK
 Initializing...
 Allocating game variables
@@ -19,7 +19,7 @@ Initializing font...OK
 Initializing game variables...OK
 Loading system fonts...OK
 Loading options...
-Initializing pads...OK
+Initializing pads...failed
 Reinitializing input engine...OK
 Remapping keys...OK
 Reinitializing input engine...OK
@@ -58,16 +58,30 @@ System loaded OK
 Initialize OK
 Set up graphics...timer...OK
 Initializing character info...OK
-Playing quick VS.
+Initializing select screen...finding characters...OK
 
 Entering main loop
-Initializing stage...
-  Loading BG...OK
-  Allocating helpers...OK
-Stage initialized OK
+Entering character select.
+attempting load and start...no BGM...attempting load and start...no BGM...Loading character chars/dArwIn_G01/dArwIn_G01.def...
+  Loading info...OK
+  Loading cmd command set dArwIn_G01.cmd...OK
+  Loading cns kfm.cns...OK
+  Loading cmd state entry dArwIn_G01.cmd...OK
+  Loading common states common1.cns...OK
+  Unloading command names...OK
+  Loading sff kfm.sff...OK
+  Loading anim kfm.air...OK
+  Loading snd kfm.snd...OK
+  Loading pals...OK
+  Loading learned AI kfm.ai...OK
+  2836 expressions (844 on trigger lines)
+Character dArwIn_G01.def loaded OK
+Playing storyboard chars/dArwIn_G01/intro.def: scene
 Loading character chars/kfm/kfm.def...
   Loading info...OK
-  Loading cmd command set kfm.cmd...OK
+  Loading cmd command set kfm.cmd...attempting load and start...attempting load of ./chars/dArwIn_G01/intro.mp3...Couldn't open BGM file ./chars/dArwIn_G01/intro.mp3!
+error 1!
+OK
   Loading cns kfm.cns...OK
   Loading cmd state entry kfm.cmd...OK
   Loading common states common1.cns...OK
@@ -79,35 +93,29 @@ Loading character chars/kfm/kfm.def...
   Loading learned AI kfm.ai...OK
   3009 expressions (979 on trigger lines)
 Character kfm.def loaded OK
-Loading character chars/ff3_0/ff3_0.def...
-  Loading info...OK
-  Loading cmd command set kfm.cmd...OK
-  Loading cns kfm.cns...OK
-  Loading cmd state entry kfm.cmd...OK
-  Loading common states common1.cns...OK
-  Unloading command names...OK
-  Loading sff kfm.sff...OK
-  Loading anim kfm.air...OK
-  Loading snd kfm.snd...OK
-  Loading pals...OK
-  Loading learned AI kfm.ai...OK
-  3111 expressions (1083 on trigger lines)
-Character ff3_0.def loaded OK
+Storyboard playback canceled 100:0 k3B p0
+Finished playing storyboard chars/dArwIn_G01/intro.def: scene
+attempting load and start...no BGM...Initializing stage...
+  Loading BG...OK
+  Allocating helpers...OK
+Stage initialized OK
 Start of game loop
 End of game loop
-Total time: 57.80s
-Total frames: 3469 	Skipped frames: 0
-Avg game rate: 60.02
-Avg frame rate: 60.02
+Total time: 23.40s
+Total frames: 1398 	Skipped frames: 0
+Avg game rate: 59.74
+Avg frame rate: 59.74
 
-Returned from main loop
+Entering character select.
+attempting load and start...no BGM...Returned from main loop
 Deinitializing...
-Frames      : 3469
-Time elapsed: 58.010 sec
-ticks: 5801, tps: 100, start 54, end 5855
+Frames      : 1398
+Time elapsed: 31.310 sec
+ticks: 3131, tps: 100, start 99, end 3230
 
 Clearing player cache...OK
 Freeing character info...OK
+Freeing select screen...OK
 Freeing fight data...OK
 Freeing system data...OK
 Freeing game variables...OK

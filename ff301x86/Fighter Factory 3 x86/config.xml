@@ -89,9 +89,9 @@
     <config name="use_opengl" value="false"/>
     <config name="window_height" value="1017"/>
     <config name="window_left" value="0"/>
-    <config name="window_state" value="8"/>
-    <config name="window_top" value="31"/>
-    <config name="window_width" value="1916"/>
+    <config name="window_state" value="10"/>
+    <config name="window_top" value="23"/>
+    <config name="window_width" value="1920"/>
     <config name="zoom_center" value="0"/>
     <config name="zoom_level" value="2"/>
     <config name="zoom_mode" value="1"/>

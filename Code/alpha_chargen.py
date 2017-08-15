@@ -6,6 +6,8 @@ Created on Sun Aug 13 18:43:26 2017
 """
 import numpy as np
 import random
+import os
+import shutil
 
 
 move_list = ['1_Smash Kung Fu Upper.txt',
@@ -71,6 +73,16 @@ char_gen = open(char_name, 'w')
 #Which will define this chars strategy
 perm_moves = np.random.permutation(move_list)
 
+
+#create new dir in Mugen/chars to store new character
+def copy_kfmb_chars(char_name):
+    src = "C:/Users/Jadon/Work Space 4Y/RP/Code/CharTemplate/kfmBlank/"
+    dst = "C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/chars/"+char_name
+    
+    #copy all contents from kfm blank into new folder
+    shutil.copytree(src,dst)
+    
+
 def ran_inbounds(siz):
     r = random.randint(0,siz)
     return r
@@ -122,13 +134,6 @@ for i in np.arange(len(move_list)):
     
 #Close the generated cmd file
 char_gen.close()
-
-
-
-
-
-
-
 
 
 
