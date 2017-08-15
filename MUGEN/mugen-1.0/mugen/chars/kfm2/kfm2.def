@@ -3,7 +3,7 @@
 
 ; Player information
 [Info]
-name = "Kung Fu Man"        ;Name of character
+name = "kfm2"        ;Name of character
 displayname = "Kung Fu Man Alpha" ;Name of character to display
 versiondate = 09,30,2009    ;Version date of character (MM-DD-YYYY or X.XX)
 mugenversion = 1.0          ;Version of M.U.G.E.N character works on (X.XX)
@@ -14,14 +14,14 @@ localcoord = 320,240        ;Local coordinate space width and height
 
 ; Files for the player
 [Files]
-cmd     = kfm.cmd           ;Command set
-cns     = kfm.cns           ;Constants
-st      = kfm.cns           ;States
+cmd     = kfm2.cmd           ;Command set
+cns     = kfm2.cns           ;Constants
+st      = kfm2.cns           ;States
 stcommon = common1.cns      ;Common states (from data/ or motif)
-sprite  = kfm.sff           ;Sprite
-anim    = kfm.air           ;Animation
-sound   = kfm.snd           ;Sound
-ai      = kfm.ai            ;AI hints data (not used)
+sprite  = kfm2.sff           ;Sprite
+anim    = kfm2.air           ;Animation
+sound   = kfm2.snd           ;Sound
+ai      = kfm2.ai            ;AI hints data (not used)
 
 ; Maps character selection buttons to palette numbers.
 [Palette Keymap]

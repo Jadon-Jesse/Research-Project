@@ -2,7 +2,7 @@
 M.U.G.E.N ver 1.00 (2010.06.29) status log
 ------------------------------------------
 Parsing command line...
-Command line: C:\Users\Jadon\Work Space 4Y\RP\MUGEN\mugen-1.0\mugen\mugen.exe kfm ff3_0 -p2.ai
+Command line: C:\Users\Jadon\Work Space 4Y\RP\MUGEN\mugen-1.0\mugen\mugen.exe kfm ff3_0  -p2.ai -rounds
 Parse command line OK
 Initializing...
 Allocating game variables
@@ -91,20 +91,20 @@ Loading character chars/ff3_0/ff3_0.def...
   Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  2808 expressions (817 on trigger lines)
+  3111 expressions (1083 on trigger lines)
 Character ff3_0.def loaded OK
 Start of game loop
 End of game loop
-Total time: 19.20s
-Total frames: 1151 	Skipped frames: 0
-Avg game rate: 59.95
-Avg frame rate: 59.95
+Total time: 57.80s
+Total frames: 3469 	Skipped frames: 0
+Avg game rate: 60.02
+Avg frame rate: 60.02
 
 Returned from main loop
 Deinitializing...
-Frames      : 1151
-Time elapsed: 19.270 sec
-ticks: 1927, tps: 100, start 40, end 1967
+Frames      : 3469
+Time elapsed: 58.010 sec
+ticks: 5801, tps: 100, start 54, end 5855
 
 Clearing player cache...OK
 Freeing character info...OK

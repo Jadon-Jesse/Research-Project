@@ -70,9 +70,10 @@
  ;
  ;Insert your characters below.
 
-kfm, stages/kfm.def
+kfm
 kfm720, stages/kfm.def
 Deadpool
+kfm2
 
 ;-----------------------
 [ExtraStages]

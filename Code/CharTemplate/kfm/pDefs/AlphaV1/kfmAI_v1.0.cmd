@@ -414,17 +414,67 @@ value = 1
 
 
 ;---------------------------------------------------------------------------
-;---------------------------------------------------------------------------
-;Crouching Strong Kick
-[State -1, Crouching Strong Kick]
+;Strong Kung Fu Palm
+[State -1, Strong Kung Fu Palm]
 type = ChangeState
-value = 440
+value = 1010
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2BodyDist x = [30,100]
+trigger1 = P2MoveType = A
+
+;---------------------------------------------------------------------------
+;Far Kung Fu Zankou
+[State -1, Far Kung Fu Zankou]
+type = ChangeState
+value = 1420
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2StateType = S
+trigger1 = P2BodyDist x = [0,30]
+trigger1 = P2MoveType = A
+
+;---------------------------------------------------------------------------
+;Stand Light Kick
+[State -1, Stand Light Kick]
+type = ChangeState
+value = 230
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = MoveGuarded = 0
+trigger1 = P2MoveType = H
+trigger1 = P2StateType = A
+trigger1 = P2BodyDist x = [0,30]
+
+;---------------------------------------------------------------------------
+;Strong Kung Fu Upper
+[State -1, Strong Kung Fu Upper]
+type = ChangeState
+value = 1110
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
 trigger1 = P2MoveType = I
-trigger1 = InGuardDist = 1
+trigger1 = P2BodyDist y = [-60,-1]
+trigger1 = P2BodyDist x = [100,200]
+
+;---------------------------------------------------------------------------
+;Fast Kung Fu Palm (1/3 super bar)
+[State -1, Fast Kung Fu Palm]
+type = ChangeState
+value = 1020
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2BodyDist y = [-60,-1]
 
 ;---------------------------------------------------------------------------
 ;High Kung Fu Blocking (Low)
@@ -436,34 +486,24 @@ triggerall = random < 500
 
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = P2BodyDist y = [30,60]
+trigger1 = P2StateType = C
+trigger1 = P2MoveType = A
+trigger1 = InGuardDist = 1
 trigger1 = MoveGuarded = 0
-trigger1 = P2BodyDist x = [30,100]
 
 ;---------------------------------------------------------------------------
-;Light Kung Fu Upper
-[State -1, Light Kung Fu Upper]
+;Light Kung Fu Zankou
+[State -1, Light Kung Fu Zankou]
 type = ChangeState
-value = 1100
+value = 1400
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
+trigger1 = InGuardDist = 0
 trigger1 = P2BodyDist y = [30,60]
 trigger1 = P2BodyDist x = [30,100]
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Palm
-[State -1, Strong Kung Fu Palm]
-type = ChangeState
-value = 1010
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
 trigger1 = MoveContact = 0 
-trigger1 = P2StateType = A
-trigger1 = P2BodyDist x = [30,100]
 
 ;---------------------------------------------------------------------------
 ;Fast Kung Fu Upper (1/3 super bar)
@@ -474,121 +514,30 @@ triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = InGuardDist = 0
-trigger1 = MoveContact != 0
-trigger1 = P2BodyDist y = [-60,-1]
-trigger1 = P2MoveType = A
-
-;---------------------------------------------------------------------------
-;Smash Kung Fu Upper (uses one super bar)
-[State -1, Smash Kung Fu Upper]
-type = ChangeState
-value = 3050
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = MoveContact = 0 
-trigger1 = InGuardDist = 1
-trigger1 = P2StateType = C
-
-;---------------------------------------------------------------------------
-;Stand Light Punch
-[State -1, Stand Light Punch]
-type = ChangeState
-value = 200
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = MoveContact = 0 
-trigger1 = InGuardDist = 1
-trigger1 = MoveGuarded = 0
-trigger1 = P2BodyDist y = [-60,-1]
-
-;---------------------------------------------------------------------------
-;Fast Kung Fu Palm (1/3 super bar)
-[State -1, Fast Kung Fu Palm]
-type = ChangeState
-value = 1020
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = MoveContact = 0 
-trigger1 = P2BodyDist y = [30,60]
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Upper
-[State -1, Strong Kung Fu Upper]
-type = ChangeState
-value = 1110
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = InGuardDist = 0
-trigger1 = P2BodyDist y = [-60,-1]
-
-;---------------------------------------------------------------------------
-;Taunt
-[State -1, Taunt]
-type = ChangeState
-value = 195
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = MoveGuarded = 0
-trigger1 = InGuardDist = 0
-
-;---------------------------------------------------------------------------
-;High Kung Fu Blocking (High)
-[State -1, High Kung Fu Blocking High]
-type = ChangeState
-value = 1300
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2MoveType = A
-trigger1 = InGuardDist = 1
-
-;---------------------------------------------------------------------------
-;Fast Kung Fu Knee (1/3 super bar)
-[State -1, Fast Kung Fu Knee]
-type = ChangeState
-value = 1070
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
 trigger1 = P2MoveType = H
-trigger1 = P2BodyDist x = [0,30]
 
 ;---------------------------------------------------------------------------
-;Kung Fu Throw
-[State -1, Kung Fu Throw]
+;Crouching Strong Punch
+[State -1, Crouching Strong Punch]
 type = ChangeState
-value = 800
+value = 410
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = MoveGuarded = 0
-trigger1 = P2BodyDist x = [100,200]
+trigger1 = P2MoveType = I
 
 ;---------------------------------------------------------------------------
-;Light Kung Fu Knee
-[State -1, Light Kung Fu Knee]
+;Jump Strong Punch
+[State -1, Jump Strong Punch]
 type = ChangeState
-value = 1050
+value = 610
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = MoveGuarded = 0
-trigger1 = InGuardDist = 1
+trigger1 = P2BodyDist y = [-60,-1]
+trigger1 = P2StateType = S
 
 ;---------------------------------------------------------------------------
 ;Jump Light Kick
@@ -599,34 +548,7 @@ triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = InGuardDist = 0
-trigger1 = P2StateType = S
-trigger1 = MoveGuarded = 0
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Blow
-[State -1, Strong Kung Fu Blow]
-type = ChangeState
-value = 1210
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = InGuardDist = 1
-trigger1 = MoveContact = 0 
-trigger1 = P2StateType = S
-trigger1 = P2MoveType = H
-
-;---------------------------------------------------------------------------
-;Standing Strong Kick
-[State -1, Standing Strong Kick]
-type = ChangeState
-value = 240
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2BodyDist y = [-60,-1]
+trigger1 = P2BodyDist x = [0,30]
 
 ;---------------------------------------------------------------------------
 ;Run Fwd
@@ -638,7 +560,22 @@ triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
 trigger1 = InGuardDist = 1
-trigger1 = P2MoveType = H
+trigger1 = MoveGuarded = 0
+trigger1 = P2StateType = A
+trigger1 = MoveContact != 0
+
+;---------------------------------------------------------------------------
+;Jump Light Punch
+[State -1, Jump Light Punch]
+type = ChangeState
+value = 600
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = InGuardDist = 1
+trigger1 = MoveContact != 0
+trigger1 = P2BodyDist y = [30,60]
 
 ;---------------------------------------------------------------------------
 ;Crouching Light Punch
@@ -649,19 +586,167 @@ triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = MoveContact = 0 
-trigger1 = P2MoveType = A
-trigger1 = P2BodyDist x = [0,30]
+trigger1 = MoveGuarded = 0
+trigger1 = P2MoveType = H
+trigger1 = P2BodyDist y = [-60,-1]
+trigger1 = P2StateType = A
 
 ;---------------------------------------------------------------------------
-;Crouching Light Kick
-[State -1, Crouching Light Kick]
+;Strong Kung Fu Knee
+[State -1, Strong Kung Fu Knee]
 type = ChangeState
-value = 430
+value = 1060
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
+trigger1 = MoveContact != 0
+trigger1 = P2BodyDist x = [30,100]
+trigger1 = P2BodyDist y = [30,60]
+
+;---------------------------------------------------------------------------
+;Kung Fu Throw
+[State -1, Kung Fu Throw]
+type = ChangeState
+value = 800
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2BodyDist y = [-60,-1]
+trigger1 = MoveGuarded != 0
+
+;---------------------------------------------------------------------------
+;Fast Kung Fu Knee (1/3 super bar)
+[State -1, Fast Kung Fu Knee]
+type = ChangeState
+value = 1070
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2BodyDist x = [30,100]
+
+;---------------------------------------------------------------------------
+;Light Kung Fu Knee
+[State -1, Light Kung Fu Knee]
+type = ChangeState
+value = 1050
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2BodyDist x = [30,100]
+
+;---------------------------------------------------------------------------
+;Crouching Strong Kick
+[State -1, Crouching Strong Kick]
+type = ChangeState
+value = 440
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = InGuardDist = 1
+trigger1 = P2BodyDist x = [0,30]
+trigger1 = P2BodyDist y = [-60,-1]
+
+;---------------------------------------------------------------------------
+;Strong Kung Fu Blow
+[State -1, Strong Kung Fu Blow]
+type = ChangeState
+value = 1210
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = MoveContact = 0 
+trigger1 = InGuardDist = 0
+trigger1 = P2BodyDist x = [0,30]
+trigger1 = P2MoveType = A
+
+;---------------------------------------------------------------------------
+;Light Kung Fu Upper
+[State -1, Light Kung Fu Upper]
+type = ChangeState
+value = 1100
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2BodyDist x = [30,100]
+
+;---------------------------------------------------------------------------
+;Run Back
+[State -1, Run Back]
+type = ChangeState
+value = 105
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = InGuardDist = 0
+
+;---------------------------------------------------------------------------
+;Taunt
+[State -1, Taunt]
+type = ChangeState
+value = 195
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2MoveType = H
+
+;---------------------------------------------------------------------------
+;Strong Kung Fu Zankou
+[State -1, Strong Kung Fu Zankou]
+type = ChangeState
+value = 1410
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2BodyDist y = [30,60]
+
+;---------------------------------------------------------------------------
+;Stand Strong Punch
+[State -1, Stand Strong Punch]
+type = ChangeState
+value = 210
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = MoveGuarded = 0
+trigger1 = P2MoveType = H
+trigger1 = P2BodyDist y = [30,60]
+
+;---------------------------------------------------------------------------
+;High Kung Fu Blocking (Air)
+[State -1, High Kung Fu Blocking Low]
+type = ChangeState
+value = 1340
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2StateType = S
+trigger1 = MoveGuarded = 0
+trigger1 = P2BodyDist x = [30,100]
+trigger1 = P2BodyDist y = [-60,-1]
+
+;---------------------------------------------------------------------------
+;Standing Strong Kick
+[State -1, Standing Strong Kick]
+type = ChangeState
+value = 240
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2BodyDist x = [0,30]
+trigger1 = MoveGuarded != 0
 trigger1 = P2BodyDist y = [-60,-1]
 
 ;---------------------------------------------------------------------------
@@ -673,47 +758,29 @@ triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = P2MoveType = H
 trigger1 = P2BodyDist y = [30,60]
-trigger1 = P2StateType = C
 
 ;---------------------------------------------------------------------------
-;High Kung Fu Blocking (Air)
-[State -1, High Kung Fu Blocking Low]
+;Crouching Light Kick
+[State -1, Crouching Light Kick]
 type = ChangeState
-value = 1340
+value = 430
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = MoveContact = 0 
-trigger1 = P2BodyDist x = [30,100]
+trigger1 = P2BodyDist x = [0,30]
 
 ;---------------------------------------------------------------------------
-;Light Kung Fu Zankou
-[State -1, Light Kung Fu Zankou]
+;High Kung Fu Blocking (High)
+[State -1, High Kung Fu Blocking High]
 type = ChangeState
-value = 1400
+value = 1300
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = P2MoveType = A
-trigger1 = P2BodyDist y = [-60,-1]
-
-;---------------------------------------------------------------------------
-;Jump Strong Punch
-[State -1, Jump Strong Punch]
-type = ChangeState
-value = 610
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2StateType = C
-trigger1 = MoveContact = 0 
-trigger1 = P2BodyDist x = [100,200]
-trigger1 = P2BodyDist y = [30,60]
+trigger1 = P2StateType = S
 
 ;---------------------------------------------------------------------------
 ;Light Kung Fu Palm
@@ -724,112 +791,8 @@ triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = P2MoveType = A
-trigger1 = P2StateType = C
-trigger1 = P2BodyDist x = [30,100]
-
-;---------------------------------------------------------------------------
-;Jump Strong Kick
-[State -1, Jump Strong Kick]
-type = ChangeState
-value = 640
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2MoveType = H
-trigger1 = MoveContact = 0 
-trigger1 = P2BodyDist x = [30,100]
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Knee
-[State -1, Strong Kung Fu Knee]
-type = ChangeState
-value = 1060
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2BodyDist x = [100,200]
-trigger1 = P2MoveType = A
-trigger1 = P2StateType = A
-trigger1 = InGuardDist = 1
-
-;---------------------------------------------------------------------------
-;Strong Kung Fu Zankou
-[State -1, Strong Kung Fu Zankou]
-type = ChangeState
-value = 1410
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = InGuardDist = 1
 trigger1 = P2StateType = S
-trigger1 = P2MoveType = A
-
-;---------------------------------------------------------------------------
-;Jump Light Punch
-[State -1, Jump Light Punch]
-type = ChangeState
-value = 600
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2StateType = C
-trigger1 = MoveGuarded != 0
-trigger1 = P2MoveType = I
-trigger1 = P2BodyDist x = [100,200]
-
-;---------------------------------------------------------------------------
-;Fast Kung Fu Blow (1/3 super bar)
-[State -1, Fast Kung Fu Blow]
-type = ChangeState
-value = 1220
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2BodyDist y = [30,60]
-trigger1 = MoveGuarded != 0
-
-;---------------------------------------------------------------------------
-;Stand Light Kick
-[State -1, Stand Light Kick]
-type = ChangeState
-value = 230
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2BodyDist x = [100,200]
-
-;---------------------------------------------------------------------------
-;Stand Strong Punch
-[State -1, Stand Strong Punch]
-type = ChangeState
-value = 210
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = P2MoveType = A
-trigger1 = P2BodyDist y = [30,60]
-trigger1 = MoveGuarded != 0
-trigger1 = P2StateType = A
-
-;---------------------------------------------------------------------------
-;Crouching Strong Punch
-[State -1, Crouching Strong Punch]
-type = ChangeState
-value = 410
-triggerall = roundstate = 2
-triggerall = random < 500
-triggerall = var(59) = 1 
-triggerall = Ctrl 
-trigger1 = InGuardDist = 0
-trigger1 = P2BodyDist y = [30,60]
+trigger1 = P2BodyDist y = [-60,-1]
 
 ;---------------------------------------------------------------------------
 ;Triple Kung Fu Palm (uses one super bar)
@@ -840,37 +803,477 @@ triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = P2BodyDist x = [30,100]
-trigger1 = P2BodyDist y = [30,60]
-trigger1 = P2StateType = A
-trigger1 = MoveGuarded != 0
+trigger1 = MoveContact = 0 
 
 ;---------------------------------------------------------------------------
-;Far Kung Fu Zankou
-[State -1, Far Kung Fu Zankou]
+;Jump Strong Kick
+[State -1, Jump Strong Kick]
 type = ChangeState
-value = 1420
+value = 640
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
-trigger1 = MoveGuarded != 0
+trigger1 = P2BodyDist x = [100,200]
 
 ;---------------------------------------------------------------------------
-;Run Back
-[State -1, Run Back]
+;Smash Kung Fu Upper (uses one super bar)
+[State -1, Smash Kung Fu Upper]
 type = ChangeState
-value = 105
+value = 3050
 triggerall = roundstate = 2
 triggerall = random < 500
 triggerall = var(59) = 1 
 triggerall = Ctrl 
 trigger1 = P2StateType = S
+trigger1 = P2MoveType = A
 trigger1 = InGuardDist = 0
+
+;---------------------------------------------------------------------------
+;Stand Light Punch
+[State -1, Stand Light Punch]
+type = ChangeState
+value = 200
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
 trigger1 = MoveContact = 0 
-trigger1 = MoveGuarded != 0
+trigger1 = P2StateType = A
+trigger1 = InGuardDist = 0
+trigger1 = P2BodyDist y = [-60,-1]
+
+;---------------------------------------------------------------------------
+;Fast Kung Fu Blow (1/3 super bar)
+[State -1, Fast Kung Fu Blow]
+type = ChangeState
+value = 1220
+triggerall = roundstate = 2
+triggerall = random < 500
+triggerall = var(59) = 1 
+triggerall = Ctrl 
+trigger1 = P2MoveType = H
+trigger1 = P2StateType = C
+trigger1 = InGuardDist = 1
+trigger1 = P2BodyDist x = [100,200]
+
 
 
 
 
 ;++++++++++++++++++
+
+
+;Stand Light Punch
+;[State -1, AI Stand Light Punch]
+;type = ChangeState
+;value = 200 ;<----------------------- State no. of the animation you want the CPU to perform
+;triggerall = roundstate = 2 ;<--------- Trigger during the fighting phase of the round "Round One...Fight"
+;triggerall = var(59) = 1 ;<--------------- AI variable that must be used in every CPU command
+;triggerall = statetype != A ;<------------ Trigger when the char is not in air
+;triggerall = random < 500 ;<------------- Trigger the move in 50% of the times the conditions is met (i'll explain more)
+;trigger1 = p2bodydist x = [0,20] ;<------- Trigger when the opponent is between 0 to 40 pixels away horizontaly
+;trigger2 = p2statetype = A ;<----------- Trigger when the opponent is not in air
+;;<-------------------- Character can be controled (Not performing a move)
+
+;===========================================================================
+;---------------------------------------------------------------------------
+;Smash Kung Fu Upper (uses one super bar)
+;[State -1, Smash Kung Fu Upper]
+;type = ChangeState
+;value = 3050
+;triggerall = command = "SmashKFUpper"
+;triggerall = power >= 1000
+;triggerall = statetype != A
+;trigger1 = ctrl
+;trigger2 = hitdefattr = SC, NA, SA, HA
+;trigger2 = stateno != [3050,3100)
+;trigger2 = movecontact
+;trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+;
+;;---------------------------------------------------------------------------
+;;Triple Kung Fu Palm (uses one super bar)
+;[State -1, Triple Kung Fu Palm]
+;type = ChangeState
+;value = 3000
+;triggerall = command = "TripleKFPalm"
+;triggerall = power >= 1000
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;trigger2 = statetype != A
+;trigger2 = hitdefattr = SC, NA, SA, HA
+;trigger2 = stateno != [3000,3050)
+;trigger2 = movecontact
+;trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+;
+;
+;;===========================================================================
+;;This is not a move, but it sets up var(1) to be 1 if conditions are right
+;;for a combo into a special move (used below).
+;;Since a lot of special moves rely on the same conditions, this reduces
+;;redundant logic.
+;[State -1, Combo condition Reset]
+;type = VarSet
+;trigger1 = 1
+;var(1) = 0
+;
+;[State -1, Combo condition Check]
+;type = VarSet
+;trigger1 = statetype != A
+;trigger1 = ctrl
+;trigger2 = (stateno = [200,299]) || (stateno = [400,499])
+;trigger2 = stateno != 440 ;Except for sweep kick
+;trigger2 = movecontact
+;trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+;var(1) = 1
+;
+;;---------------------------------------------------------------------------
+;;Fast Kung Fu Knee (1/3 super bar)
+;[State -1, Fast Kung Fu Knee]
+;type = ChangeState
+;value = 1070
+;triggerall = command = "FF_ab"
+;triggerall = power >= 330
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Light Kung Fu Knee
+;[State -1, Light Kung Fu Knee]
+;type = ChangeState
+;value = 1050
+;triggerall = command = "FF_a"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Strong Kung Fu Knee
+;[State -1, Strong Kung Fu Knee]
+;type = ChangeState
+;value = 1060
+;triggerall = command = "FF_b"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Fast Kung Fu Palm (1/3 super bar)
+;[State -1, Fast Kung Fu Palm]
+;type = ChangeState
+;value = 1020
+;triggerall = command = "QCF_xy"
+;triggerall = power >= 330
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Light Kung Fu Palm
+;[State -1, Light Kung Fu Palm]
+;type = ChangeState
+;value = 1000
+;triggerall = command = "QCF_x"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Strong Kung Fu Palm
+;[State -1, Strong Kung Fu Palm]
+;type = ChangeState
+;value = 1010
+;triggerall = command = "QCF_y"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Fast Kung Fu Upper (1/3 super bar)
+;[State -1, Fast Kung Fu Upper]
+;type = ChangeState
+;value = 1120
+;triggerall = command = "upper_xy"
+;triggerall = power >= 330
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Light Kung Fu Upper
+;[State -1, Light Kung Fu Upper]
+;type = ChangeState
+;value = 1100
+;triggerall = command = "upper_x"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Strong Kung Fu Upper
+;[State -1, Strong Kung Fu Upper]
+;type = ChangeState
+;value = 1110
+;triggerall = command = "upper_y"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Fast Kung Fu Blow (1/3 super bar)
+;[State -1, Fast Kung Fu Blow]
+;type = ChangeState
+;value = 1220
+;triggerall = command = "QCB_xy"
+;triggerall = power >= 330
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Light Kung Fu Blow
+;[State -1, Light Kung Fu Blow]
+;type = ChangeState
+;value = 1200
+;triggerall = command = "QCB_x"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Strong Kung Fu Blow
+;[State -1, Strong Kung Fu Blow]
+;type = ChangeState
+;value = 1210
+;triggerall = command = "QCB_y"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;High Kung Fu Blocking (High)
+;[State -1, High Kung Fu Blocking High]
+;type = ChangeState
+;value = 1300
+;triggerall = command = "blocking"
+;triggerall = command != "holddown"
+;trigger1 = ctrl
+;trigger1 = statetype != A
+;trigger2 = stateno = 1310 || stateno = 1330
+;trigger2 = time > 0
+;
+;;---------------------------------------------------------------------------
+;;High Kung Fu Blocking (Low)
+;[State -1, High Kung Fu Blocking Low]
+;type = ChangeState
+;value = 1320
+;triggerall = command = "blocking"
+;triggerall = command = "holddown"
+;trigger1 = ctrl
+;trigger1 = statetype != A
+;trigger2 = stateno = 1310 || stateno = 1330
+;trigger2 = time > 0
+;
+;;---------------------------------------------------------------------------
+;;High Kung Fu Blocking (Air)
+;[State -1, High Kung Fu Blocking Low]
+;type = ChangeState
+;value = 1340
+;triggerall = command = "blocking"
+;triggerall = command != "holdup"
+;triggerall = command != "holddown"
+;trigger1 = ctrl
+;trigger1 = statetype = A
+;trigger2 = stateno = 1350
+;trigger2 = time > 0
+;
+;;---------------------------------------------------------------------------
+;;Far Kung Fu Zankou
+;[State -1, Far Kung Fu Zankou]
+;type = ChangeState
+;value = 1420
+;triggerall = command = "QCF_ab"
+;triggerall = power >= 330
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Light Kung Fu Zankou
+;[State -1, Light Kung Fu Zankou]
+;type = ChangeState
+;value = 1400
+;triggerall = command = "QCF_a"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;---------------------------------------------------------------------------
+;;Strong Kung Fu Zankou
+;[State -1, Strong Kung Fu Zankou]
+;type = ChangeState
+;value = 1410
+;triggerall = command = "QCF_b"
+;trigger1 = var(1) ;Use combo condition (above)
+;
+;;===========================================================================
+;;---------------------------------------------------------------------------
+;;Run Fwd
+;[State -1, Run Fwd]
+;type = ChangeState
+;value = 100
+;trigger1 = command = "FF"
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;
+;;---------------------------------------------------------------------------
+;;Run Back
+;[State -1, Run Back]
+;type = ChangeState
+;value = 105
+;trigger1 = command = "BB"
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;
+;;---------------------------------------------------------------------------
+;;Kung Fu Throw
+;[State -1, Kung Fu Throw]
+;type = ChangeState
+;value = 800
+;triggerall = command = "y"
+;triggerall = statetype = S
+;triggerall = ctrl
+;triggerall = stateno != 100
+;trigger1 = command = "holdfwd"
+;trigger1 = p2bodydist X < 3
+;trigger1 = (p2statetype = S) || (p2statetype = C)
+;trigger1 = p2movetype != H
+;trigger2 = command = "holdback"
+;trigger2 = p2bodydist X < 5
+;trigger2 = (p2statetype = S) || (p2statetype = C)
+;trigger2 = p2movetype != H
+;
+;
+;
+;;===========================================================================
+;;---------------------------------------------------------------------------
+;;Stand Light Punch
+;[State -1, Stand Light Punch]
+;type = ChangeState
+;value = 200
+;triggerall = command = "x"
+;triggerall = command != "holddown"
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;trigger2 = stateno = 200
+;trigger2 = time > 6
+;
+;;---------------------------------------------------------------------------
+;;Stand Strong Punch
+;[State -1, Stand Strong Punch]
+;type = ChangeState
+;value = 210
+;triggerall = command = "y"
+;triggerall = command != "holddown"
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;trigger2 = (stateno = 200) && time > 5
+;trigger3 = (stateno = 230) && time > 6
+;
+;;---------------------------------------------------------------------------
+;;Stand Light Kick
+;[State -1, Stand Light Kick]
+;type = ChangeState
+;value = 230
+;triggerall = command = "a"
+;triggerall = command != "holddown"
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;trigger2 = (stateno = 200) && time > 7
+;trigger3 = (stateno = 230) && time > 9
+;
+;;---------------------------------------------------------------------------
+;;Standing Strong Kick
+;[State -1, Standing Strong Kick]
+;type = ChangeState
+;value = 240
+;triggerall = command = "b"
+;triggerall = command != "holddown"
+;trigger1 = statetype = S
+;trigger1 = ctrl
+;trigger2 = (stateno = 200) && time > 5
+;trigger3 = (stateno = 230) && time > 6
+;
+;;---------------------------------------------------------------------------
+;;Taunt
+;[State -1, Taunt]
+;type = ChangeState
+;value = 195
+;triggerall = command = "start"
+;trigger1 = statetype != A
+;trigger1 = ctrl
+;
+;;---------------------------------------------------------------------------
+;;Crouching Light Punch
+;[State -1, Crouching Light Punch]
+;type = ChangeState
+;value = 400
+;triggerall = command = "x"
+;triggerall = command = "holddown"
+;trigger1 = statetype = C
+;trigger1 = ctrl
+;
+;;---------------------------------------------------------------------------
+;;Crouching Strong Punch
+;[State -1, Crouching Strong Punch]
+;type = ChangeState
+;value = 410
+;triggerall = command = "y"
+;triggerall = command = "holddown"
+;trigger1 = statetype = C
+;trigger1 = ctrl
+;trigger2 = (stateno = 400) || (stateno = 430)
+;trigger2 = (time > 9) || (movecontact && time > 5)
+;
+;;---------------------------------------------------------------------------
+;;Crouching Light Kick
+;[State -1, Crouching Light Kick]
+;type = ChangeState
+;value = 430
+;triggerall = command = "a"
+;triggerall = command = "holddown"
+;trigger1 = statetype = C
+;trigger1 = ctrl
+;trigger2 = (stateno = 400) || (stateno = 430)
+;trigger2 = (time > 9) || (movecontact && time > 5)
+;
+;;---------------------------------------------------------------------------
+;;Crouching Strong Kick
+;[State -1, Crouching Strong Kick]
+;type = ChangeState
+;value = 440
+;triggerall = command = "b"
+;triggerall = command = "holddown"
+;trigger1 = statetype = C
+;trigger1 = ctrl
+;trigger2 = (stateno = 400) || (stateno = 430)
+;trigger2 = (time > 9) || (movecontact && time > 5)
+;
+;;---------------------------------------------------------------------------
+;;Jump Light Punch
+;[State -1, Jump Light Punch]
+;type = ChangeState
+;value = 600
+;triggerall = command = "x"
+;trigger1 = statetype = A
+;trigger1 = ctrl
+;trigger2 = stateno = 600
+;trigger2 = statetime >= 7
+;trigger3 = stateno = 1350 ;Air blocking
+;
+;;---------------------------------------------------------------------------
+;;Jump Strong Punch
+;[State -1, Jump Strong Punch]
+;type = ChangeState
+;value = 610
+;triggerall = command = "y"
+;trigger1 = statetype = A
+;trigger1 = ctrl
+;trigger2 = stateno = 600 || stateno = 630 ;jump_x or jump_a
+;trigger2 = movecontact
+;trigger3 = stateno = 1350 ;Air blocking
+;
+;;---------------------------------------------------------------------------
+;;Jump Light Kick
+;[State -1, Jump Light Kick]
+;type = ChangeState
+;value = 630
+;triggerall = command = "a"
+;trigger1 = statetype = A
+;trigger1 = ctrl
+;trigger2 = stateno = 1350 ;Air blocking
+;
+;;---------------------------------------------------------------------------
+;;Jump Strong Kick
+;[State -1, Jump Strong Kick]
+;type = ChangeState
+;value = 640
+;triggerall = command = "b"
+;trigger1 = statetype = A
+;trigger1 = ctrl
+;trigger2 = stateno = 600 || stateno = 630 ;jump_x or jump_a
+;trigger2 = movecontact
+;trigger3 = stateno = 1350 ;Air blocking

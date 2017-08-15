@@ -10,7 +10,7 @@ import subprocess
 #p.wait() 
 
 char_one = "kfm"
-char_two = "Deadpool"
+char_two = "kfm2"
 filename = "matchout.txt"
 num_rounds = "1"
 
