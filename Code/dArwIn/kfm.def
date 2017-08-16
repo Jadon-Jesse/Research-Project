@@ -14,7 +14,7 @@ localcoord = 320,240        ;Local coordinate space width and height
 
 ; Files for the player
 [Files]
-cmd     = {{cmd}}           ;Command set
+cmd     = {{cmd}}.cmd           ;Command set
 cns     = kfm.cns           ;Constants
 st      = kfm.cns           ;States
 stcommon = common1.cns      ;Common states (from data/ or motif)

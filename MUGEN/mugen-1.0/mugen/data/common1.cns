@@ -56,6 +56,12 @@ trigger1 = !alive
 value = 5050
 ctrl = 0
 
+[State 0, 5] ;Are you floating? EXTAR
+type = ChangeState
+triggerall = pos y < 0
+trigger1 = time > 1
+value = 50
+
 ;---------------------------------------------------------------------------
 ; Stand to Crouch
 [Statedef 10]

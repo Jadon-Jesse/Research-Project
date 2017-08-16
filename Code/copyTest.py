@@ -8,8 +8,6 @@ Created on Tue Aug 15 22:05:26 2017
 import os
 import shutil
 import jinja2 as jin
-import fileinput
-import sys
 
 dAI_dir = "C:/Users/Jadon/Work Space 4Y/RP/Code/dArwIn/"
 dAI_req_dir = "C:/Users/Jadon/Work Space 4Y/RP/Code/dArwIn/required/"

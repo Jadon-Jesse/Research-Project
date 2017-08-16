@@ -4,4 +4,4 @@
 type = ChangeState
 value = 440
 triggerall = roundstate = 2
-triggerall = random < 500
+triggerall = random < 50

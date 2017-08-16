@@ -62,11 +62,15 @@ Initializing select screen...finding characters...OK
 
 Entering main loop
 Entering character select.
-attempting load and start...no BGM...attempting load and start...no BGM...Loading character chars/dArwIn_G01/dArwIn_G01.def...
+attempting load and start...no BGM...Initializing stage...
+  Loading BG...OK
+  Allocating helpers...OK
+Stage initialized OK
+Loading character chars/dArwIn_P1/dArwIn_P1.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G01.cmd...OK
+  Loading cmd command set dArwIn_P1.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G01.cmd...OK
+  Loading cmd state entry dArwIn_P1.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
@@ -74,16 +78,13 @@ attempting load and start...no BGM...attempting load and start...no BGM...Loadin
   Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  2836 expressions (844 on trigger lines)
-Character dArwIn_G01.def loaded OK
-Playing storyboard chars/dArwIn_G01/intro.def: scene
-Loading character chars/kfm/kfm.def...
+  3108 expressions (1079 on trigger lines)
+Character dArwIn_P1.def loaded OK
+Loading character chars/dArwIn_P61/dArwIn_P61.def...
   Loading info...OK
-  Loading cmd command set kfm.cmd...attempting load and start...attempting load of ./chars/dArwIn_G01/intro.mp3...Couldn't open BGM file ./chars/dArwIn_G01/intro.mp3!
-error 1!
-OK
+  Loading cmd command set dArwIn_P61.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry kfm.cmd...OK
+  Loading cmd state entry dArwIn_P61.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
@@ -91,27 +92,61 @@ OK
   Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3009 expressions (979 on trigger lines)
-Character kfm.def loaded OK
-Storyboard playback canceled 100:0 k3B p0
-Finished playing storyboard chars/dArwIn_G01/intro.def: scene
+  3115 expressions (1086 on trigger lines)
+Character dArwIn_P61.def loaded OK
+Start of game loop
+End of game loop
+Total time: 6.82s
+Total frames: 410 	Skipped frames: 0
+Avg game rate: 60.12
+Avg frame rate: 60.12
+
+Entering character select.
+attempting load and start...no BGM...attempting load and start...no BGM...Loading character chars/dArwIn_N2/dArwIn_N2.def...
+  Loading info...OK
+  Loading cmd command set dArwIn_N2.cmd...OK
+  Loading cns kfm.cns...OK
+  Loading cmd state entry dArwIn_N2.cmd...OK
+  Loading common states common1.cns...OK
+  Unloading command names...OK
+  Loading sff kfm.sff...OK
+  Loading anim kfm.air...OK
+  Loading snd kfm.snd...OK
+  Loading pals...OK
+  Loading learned AI kfm.ai...OK
+  3107 expressions (1078 on trigger lines)
+Character dArwIn_N2.def loaded OK
+Loading character chars/dArwIn_P3/dArwIn_P3.def...
+  Loading info...OK
+  Loading cmd command set dArwIn_P3.cmd...OK
+  Loading cns kfm.cns...OK
+  Loading cmd state entry dArwIn_P3.cmd...OK
+  Loading common states common1.cns...OK
+  Unloading command names...OK
+  Loading sff kfm.sff...OK
+  Loading anim kfm.air...OK
+  Loading snd kfm.snd...OK
+  Loading pals...OK
+  Loading learned AI kfm.ai...OK
+  3123 expressions (1094 on trigger lines)
+Character dArwIn_P3.def loaded OK
 attempting load and start...no BGM...Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
 Start of game loop
 End of game loop
-Total time: 23.40s
-Total frames: 1398 	Skipped frames: 0
-Avg game rate: 59.74
-Avg frame rate: 59.74
+Total time: 47.38s
+Total frames: 2837 	Skipped frames: 0
+Avg game rate: 59.88
+Avg frame rate: 59.88
 
 Entering character select.
-attempting load and start...no BGM...Returned from main loop
+attempting load and start...no BGM...attempting load and start...no BGM...Returned from main loop
 Deinitializing...
-Frames      : 1398
-Time elapsed: 31.310 sec
-ticks: 3131, tps: 100, start 99, end 3230
+Frames      : 3247
+Time elapsed: 83.120 sec
+ticks: 8312, tps: 100, start 37, end 8349
 
 Clearing player cache...OK
 Freeing character info...OK
