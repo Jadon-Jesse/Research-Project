@@ -2,12 +2,12 @@
 M.U.G.E.N ver 1.00 (2010.06.29) status log
 ------------------------------------------
 Parsing command line...
-Command line: C:\Users\Jadon\Work Space 4Y\RP\MUGEN\mugen-1.0\mugen\mugen.exe
+Command line: C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe -log -p1 -p2 -p1.ai -p2.ai -rounds
 Parse command line OK
 Initializing...
 Allocating game variables
 Reading configuration file...OK
-Initializing timer...performance timer enabled...frequency 2435869...OK
+Initializing timer...performance timer enabled...frequency 2435875...OK
 Initializing keyboard...configuring...OK
 Initializing input engine...OK
 Initializing sound...OK
@@ -19,7 +19,7 @@ Initializing font...OK
 Initializing game variables...OK
 Loading system fonts...OK
 Loading options...
-Initializing pads...failed
+Initializing pads...OK
 Reinitializing input engine...OK
 Remapping keys...OK
 Reinitializing input engine...OK
@@ -58,19 +58,18 @@ System loaded OK
 Initialize OK
 Set up graphics...timer...OK
 Initializing character info...OK
-Initializing select screen...finding characters...OK
+Playing quick VS.
 
 Entering main loop
-Entering character select.
-attempting load and start...no BGM...Initializing stage...
+Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
-Loading character chars/dArwIn_P1/dArwIn_P1.def...
+Loading character chars/dArwIn_Flafeen/dArwIn_Flafeen.def...
   Loading info...OK
-  Loading cmd command set dArwIn_P1.cmd...OK
+  Loading cmd command set dArwIn_Flafeen.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_P1.cmd...OK
+  Loading cmd state entry dArwIn_Flafeen.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
@@ -78,13 +77,13 @@ Loading character chars/dArwIn_P1/dArwIn_P1.def...
   Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3108 expressions (1079 on trigger lines)
-Character dArwIn_P1.def loaded OK
-Loading character chars/dArwIn_P61/dArwIn_P61.def...
+  3113 expressions (1084 on trigger lines)
+Character dArwIn_Flafeen.def loaded OK
+Loading character chars/dArwIn_Flafoon/dArwIn_Flafoon.def...
   Loading info...OK
-  Loading cmd command set dArwIn_P61.cmd...OK
+  Loading cmd command set dArwIn_Flafoon.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_P61.cmd...OK
+  Loading cmd state entry dArwIn_Flafoon.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
@@ -92,65 +91,23 @@ Loading character chars/dArwIn_P61/dArwIn_P61.def...
   Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3115 expressions (1086 on trigger lines)
-Character dArwIn_P61.def loaded OK
+  3110 expressions (1081 on trigger lines)
+Character dArwIn_Flafoon.def loaded OK
 Start of game loop
 End of game loop
-Total time: 6.82s
-Total frames: 410 	Skipped frames: 0
-Avg game rate: 60.12
-Avg frame rate: 60.12
+Total time: 35.02s
+Total frames: 2102 	Skipped frames: 0
+Avg game rate: 60.02
+Avg frame rate: 60.02
 
-Entering character select.
-attempting load and start...no BGM...attempting load and start...no BGM...Loading character chars/dArwIn_N2/dArwIn_N2.def...
-  Loading info...OK
-  Loading cmd command set dArwIn_N2.cmd...OK
-  Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_N2.cmd...OK
-  Loading common states common1.cns...OK
-  Unloading command names...OK
-  Loading sff kfm.sff...OK
-  Loading anim kfm.air...OK
-  Loading snd kfm.snd...OK
-  Loading pals...OK
-  Loading learned AI kfm.ai...OK
-  3107 expressions (1078 on trigger lines)
-Character dArwIn_N2.def loaded OK
-Loading character chars/dArwIn_P3/dArwIn_P3.def...
-  Loading info...OK
-  Loading cmd command set dArwIn_P3.cmd...OK
-  Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_P3.cmd...OK
-  Loading common states common1.cns...OK
-  Unloading command names...OK
-  Loading sff kfm.sff...OK
-  Loading anim kfm.air...OK
-  Loading snd kfm.snd...OK
-  Loading pals...OK
-  Loading learned AI kfm.ai...OK
-  3123 expressions (1094 on trigger lines)
-Character dArwIn_P3.def loaded OK
-attempting load and start...no BGM...Initializing stage...
-  Loading BG...OK
-  Allocating helpers...OK
-Stage initialized OK
-Start of game loop
-End of game loop
-Total time: 47.38s
-Total frames: 2837 	Skipped frames: 0
-Avg game rate: 59.88
-Avg frame rate: 59.88
-
-Entering character select.
-attempting load and start...no BGM...attempting load and start...no BGM...Returned from main loop
+Returned from main loop
 Deinitializing...
-Frames      : 3247
-Time elapsed: 83.120 sec
-ticks: 8312, tps: 100, start 37, end 8349
+Frames      : 2102
+Time elapsed: 35.090 sec
+ticks: 3509, tps: 100, start 38, end 3547
 
 Clearing player cache...OK
 Freeing character info...OK
-Freeing select screen...OK
 Freeing fight data...OK
 Freeing system data...OK
 Freeing game variables...OK

@@ -57,7 +57,7 @@ trigger_list = ['P2BodyDist x ',
                 'MoveGuarded ']
 
 trigger_args = {0:['= [0,30]', '= [30,100]', '= [100,200]'],
-                1:['> 30'],#, '> 60'],
+                1:['> 30', '> 60'],
                 2:['= 0', '= 1'],
                 3:['= A', '= I', '= H'],#, '!= A', '!= I', '!= H'],
                 4:['= S', '= C', '= A'],#, '!= S', '!= C', '!= A'],
@@ -222,17 +222,22 @@ def spawn_randomly(name):
           
 #All we need to do is feed in a list of names....
 
-names = ["dArwIn_N1",
-         "dArwIn_N2",
-         "dArwIn_N3"]
+#names = ["dArwIn_Flafeen",
+#         "dArwIn_Flafoon",
+#         "dArwIn_Neeblereena"]
+#
+#for i in names:
+#    spawn_randomly(i)
+#    
+#    
 
-for i in names:
-    spawn_randomly(i)
+def main(t):
+    print('hello from alpha'+t)
 
 
 
-
-
+if __name__ =='__main__':
+    main('tt')
 
 
 
