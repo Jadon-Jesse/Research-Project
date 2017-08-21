@@ -70,31 +70,13 @@
  ;
  ;Insert your characters below.
 
-dArwIn_Neeblereena 
-dArwIn_Flafoon 
-dArwIn_Flafeen 
-dArwIn_N3 
-dArwIn_N2 
-dArwIn_N1 
-dArwIn_Py3 
-dArwIn_Py2 
-dArwIn_Py1 
-dArwIn_P63 
-dArwIn_P62 
-dArwIn_P61 
-dArwIn_P3 
-dArwIn_P2 
-dArwIn_P1 
-dArwIn_L53 
-dArwIn_L52 
-dArwIn_L51 
-dArwIn_G03 
-dArwIn_G02 
-dArwIn_G01 
+dArwIn_G0_2 
+dArwIn_G0_1 
+dArwIn_G0_0 
+
 kfm
 kfm720, stages/kfm.def
 Deadpool
-kfm2
 
 ;-----------------------
 [ExtraStages]

@@ -72,16 +72,13 @@ def round_robin(names):
     df_matches = pd.DataFrame({"MatchNo":match_list,"P1":p1_list,"P2":p2_list,"Winner":winner_list,"ELO":elo_list}, columns = ["MatchNo","P1","P2","Winner","ELO"])
     return df_matches
 
-def main(name_list):
-    c = getWinner()
-
 
 if __name__ == '__main__':
-    ckm ='Kung Fu Man'
-    m = 'kfm2'
-    names = ["dArwIn_Flafeen",
-        "dArwIn_Flafoon"]
-    df = round_robin(names)
-
+    #ckm ='Kung Fu Man'
+    #m = 'kfm2'
+    #names = ["dArwIn_Flafeen",
+    #    "dArwIn_Flafoon"]
+    #df = round_robin(names)
+    print("Called directly from main")
 
 

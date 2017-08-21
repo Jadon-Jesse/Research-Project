@@ -214,30 +214,37 @@ def spawn_randomly(name):
 
     file2 = open(to_filepathd,'w')
     file2.write(template.render(char_name=name, display_name = name, cmd = name))
-#print(template.render(name='West',bur='TOO'))
+
     file2.close()
     
     add_char_to_list(name)
 
-          
-#All we need to do is feed in a list of names....
 
-#names = ["dArwIn_Flafeen",
-#         "dArwIn_Flafoon",
-#         "dArwIn_Neeblereena"]
-#
-#for i in names:
-#    spawn_randomly(i)
-#    
-#    
+  
+def gen_names(num, gen):
+    l = []
+    for i in np.arange(num):
+        s = "dArwIn_G{0}_{1}".format(gen,i)
+        l.append(s)
+    return l
+             
 
-def main(t):
-    print('hello from alpha'+t)
+def initial_population(num_to_gen, gen):
+    #Create unique names for each char and init their elo to 100
+    names = gen_names(num_to_gen,gen)
+    elo=[]
+    
+    print("creating population...")
+    for i in names:
+        spawn_randomly(i)
+        elo.append(100)
+    print("done!")
+    return names,elo
 
 
 
 if __name__ =='__main__':
-    main('tt')
+    print("main called directly")
 
 
 

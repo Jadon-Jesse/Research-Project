@@ -19,7 +19,7 @@ Initializing font...OK
 Initializing game variables...OK
 Loading system fonts...OK
 Loading options...
-Initializing pads...OK
+Initializing pads...failed
 Reinitializing input engine...OK
 Remapping keys...OK
 Reinitializing input engine...OK
@@ -65,11 +65,25 @@ Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
-Loading character chars/dArwIn_Flafeen/dArwIn_Flafeen.def...
+Loading character chars/dArwIn_G0_1/dArwIn_G0_1.def...
   Loading info...OK
-  Loading cmd command set dArwIn_Flafeen.cmd...OK
+  Loading cmd command set dArwIn_G0_1.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_Flafeen.cmd...OK
+  Loading cmd state entry dArwIn_G0_1.cmd...OK
+  Loading common states common1.cns...OK
+  Unloading command names...OK
+  Loading sff kfm.sff...OK
+  Loading anim kfm.air...OK
+  Loading snd kfm.snd...OK
+  Loading pals...OK
+  Loading learned AI kfm.ai...OK
+  3116 expressions (1087 on trigger lines)
+Character dArwIn_G0_1.def loaded OK
+Loading character chars/dArwIn_G0_2/dArwIn_G0_2.def...
+  Loading info...OK
+  Loading cmd command set dArwIn_G0_2.cmd...OK
+  Loading cns kfm.cns...OK
+  Loading cmd state entry dArwIn_G0_2.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
@@ -78,33 +92,19 @@ Loading character chars/dArwIn_Flafeen/dArwIn_Flafeen.def...
   Loading pals...OK
   Loading learned AI kfm.ai...OK
   3113 expressions (1084 on trigger lines)
-Character dArwIn_Flafeen.def loaded OK
-Loading character chars/dArwIn_Flafoon/dArwIn_Flafoon.def...
-  Loading info...OK
-  Loading cmd command set dArwIn_Flafoon.cmd...OK
-  Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_Flafoon.cmd...OK
-  Loading common states common1.cns...OK
-  Unloading command names...OK
-  Loading sff kfm.sff...OK
-  Loading anim kfm.air...OK
-  Loading snd kfm.snd...OK
-  Loading pals...OK
-  Loading learned AI kfm.ai...OK
-  3110 expressions (1081 on trigger lines)
-Character dArwIn_Flafoon.def loaded OK
+Character dArwIn_G0_2.def loaded OK
 Start of game loop
 End of game loop
-Total time: 35.02s
-Total frames: 2102 	Skipped frames: 0
+Total time: 30.49s
+Total frames: 1830 	Skipped frames: 0
 Avg game rate: 60.02
 Avg frame rate: 60.02
 
 Returned from main loop
 Deinitializing...
-Frames      : 2102
-Time elapsed: 35.090 sec
-ticks: 3509, tps: 100, start 38, end 3547
+Frames      : 1830
+Time elapsed: 30.560 sec
+ticks: 3056, tps: 100, start 36, end 3092
 
 Clearing player cache...OK
 Freeing character info...OK
