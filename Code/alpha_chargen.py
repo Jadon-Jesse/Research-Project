@@ -218,6 +218,48 @@ def spawn_randomly(name):
     file2.close()
     
     add_char_to_list(name)
+    
+    
+#Spawn children with already defined move list
+#instead of name take in generation
+#and just generate the name here
+def spawn_child(gen, moves, iden):
+    name = "dArwIn_G{0}_{1}".format(gen,iden)
+    #copies required files to mugen/char/dArwIn_G...
+    dst = char_dest+name+"/"
+    src =dAI_req_dir
+    shutil.copytree(src, dst)
+    
+    #now generate the template and store in that directory
+    kfm_cmd_tmp = "kfm.cmd"
+    
+    env_cmd = jin.Environment(loader=jin.FileSystemLoader(dAI_dir))
+    template = env_cmd.get_template(kfm_cmd_tmp)
+    
+    #declare pointer to the ai name
+    to_filepath = char_dest+name+"/"+name+".cmd"
+    move_list = moves############################################
+    file = open(to_filepath,'w')
+    file.write(template.render(ai=move_list))
+#print(template.render(name='West',bur='TOO'))
+    file.close()
+    
+    kfm_def_tmp = "kfm.def"
+    
+    env_def = jin.Environment(loader=jin.FileSystemLoader(dAI_dir))
+    template = env_def.get_template(kfm_def_tmp)
+    
+    #declare pointer to the ai name
+    to_filepathd = char_dest+name+"/"+name+".def"
+
+    file2 = open(to_filepathd,'w')
+    file2.write(template.render(char_name=name, display_name = name, cmd = name))
+
+    file2.close()
+    
+    add_char_to_list(name)
+    return name
+
 
 
   
@@ -237,7 +279,7 @@ def initial_population(num_to_gen, gen):
     print("creating population...")
     for i in names:
         spawn_randomly(i)
-        elo.append(100)
+        elo.append(1000)
     print("done!")
     return names,elo
 

@@ -8,9 +8,11 @@ import pandas as pd
 import numpy as np
 import itertools
 import math
+import random
 
 import alpha_chargen
 import hook
+import parse_file
 ################################
 #This script will run the show
 #Takes in
@@ -20,7 +22,7 @@ import hook
 
 num_init_pop = 3
 #Num generations to evolve initial pop for
-num_generations = 1
+num_generations = 3
 
 list_df_gen = []
 
@@ -96,31 +98,85 @@ def round_robin(names, generation):
     
     
     
+
+elite_rate = 0.1
+new_rate = 0.1
+crossover_rate = 0.8
+
+mutation_rate = 0.001
+
+def nu_gen(df,size,nu):
+    # get elite individuals and addem to our new df 
+    elite_cutoff = math.ceil(elite_rate*size)
+    
+    
+    new_pop = []
+    df_newPop = pd.DataFrame(columns=['Name','ELO','Wins','Losses'])
+    df_newPop = df_newPop.append(df[0:elite_cutoff])
+    #children=[]
+    #Perform genertoc operation of crossover 
+    #num of time to run loop
+    num_fover = math.floor(crossover_rate * size)
+    loop = int(num_fover/2)
+    for i in np.arange(loop):
+        #choose parents possibly tournment selection later
+        print("creating kids")
+        r = random.sample(range(0,len(df)),2)
+        par1 = df.loc[r[0]].Name
+        par2 = df.loc[r[1]].Name
+        #generate their childrens moves
+        child_amoves, child_bmoves = parse_file.create_children(par1,par2, 0.5)
+        aid = str(i)+"a"
+        bid = str(i)+"b"
+        #spawn children
+        aname = alpha_chargen.spawn_child(nu, child_amoves, aid)
+        bname = alpha_chargen.spawn_child(nu, child_bmoves, bid)
+        print("done")
+        new_pop.append(aname)
+        new_pop.append(bname)
+        #create temp dfs
+        winlos = 0
+        elo = 1000
+        dfa = pd.DataFrame({'Name':[aname], 'ELO':[elo], 'Wins':[winlos], 'Losses':[winlos]}, columns=['Name','ELO','Wins','Losses'])
+        dfb = pd.DataFrame({'Name':[bname], 'ELO':[elo], 'Wins':[winlos], 'Losses':[winlos]}, columns=['Name','ELO','Wins','Losses'])
+        df_newPop = df_newPop.append(dfa, ignore_index=True)
+        df_newPop = df_newPop.append(dfb, ignore_index=True)
+     
+
+    #now create new individiuals if necessary
+    #....
+    
+    return df_newPop
+        
+    
 #Initial Population
 #current_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
 current_pop = ['dArwIn_G0_0',
-               'dArwIn_G0_1',
-               'dArwIn_G0_2']
+           'dArwIn_G0_1',
+           'dArwIn_G0_2']
 
 elo = [1000,1000,1000]
 
 df_init = pd.DataFrame({'Name':current_pop, 'ELO':elo}, columns=['Name','ELO'])
 df_init['Wins'] = 0
 df_init['Losses'] = 0
-       
+   
 list_df_gen.append(df_init)
 
-
-def begin():
-    for i in np.arange(num_generations):
-        match_stats = round_robin(current_pop, i)
-        df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
-        print(df_sorted.head())
-        
     
+for i in np.arange(num_generations):
+    print("Generation : "+str(i))
+    match_stats = round_robin(current_pop, i)
+    #Sort our current pupulation interms of ELO
+    df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
+    print(df_sorted.head())
+    #hah! Get it?
+    new_pop = nu_gen(df_sorted, len(df_sorted),i+1)
     
-begin()
-    
+    #replace current pop with new pop
+    current_pop = new_pop.Name.tolist()
+    #keep track
+    list_df_gen.append(new_pop)
     
     
     

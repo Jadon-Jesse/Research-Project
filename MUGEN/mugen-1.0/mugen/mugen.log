@@ -65,11 +65,11 @@ Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
-Loading character chars/dArwIn_G0_1/dArwIn_G0_1.def...
+Loading character chars/dArwIn_G2_0a/dArwIn_G2_0a.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G0_1.cmd...OK
+  Loading cmd command set dArwIn_G2_0a.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G0_1.cmd...OK
+  Loading cmd state entry dArwIn_G2_0a.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
@@ -77,13 +77,13 @@ Loading character chars/dArwIn_G0_1/dArwIn_G0_1.def...
   Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3116 expressions (1087 on trigger lines)
-Character dArwIn_G0_1.def loaded OK
-Loading character chars/dArwIn_G0_2/dArwIn_G0_2.def...
+  3119 expressions (1089 on trigger lines)
+Character dArwIn_G2_0a.def loaded OK
+Loading character chars/dArwIn_G2_0b/dArwIn_G2_0b.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G0_2.cmd...OK
+  Loading cmd command set dArwIn_G2_0b.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G0_2.cmd...OK
+  Loading cmd state entry dArwIn_G2_0b.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
@@ -91,20 +91,20 @@ Loading character chars/dArwIn_G0_2/dArwIn_G0_2.def...
   Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3113 expressions (1084 on trigger lines)
-Character dArwIn_G0_2.def loaded OK
+  3103 expressions (1075 on trigger lines)
+Character dArwIn_G2_0b.def loaded OK
 Start of game loop
 End of game loop
-Total time: 30.49s
-Total frames: 1830 	Skipped frames: 0
-Avg game rate: 60.02
-Avg frame rate: 60.02
+Total time: 31.48s
+Total frames: 1890 	Skipped frames: 0
+Avg game rate: 60.04
+Avg frame rate: 60.04
 
 Returned from main loop
 Deinitializing...
-Frames      : 1830
-Time elapsed: 30.560 sec
-ticks: 3056, tps: 100, start 36, end 3092
+Frames      : 1890
+Time elapsed: 31.560 sec
+ticks: 3156, tps: 100, start 35, end 3191
 
 Clearing player cache...OK
 Freeing character info...OK
