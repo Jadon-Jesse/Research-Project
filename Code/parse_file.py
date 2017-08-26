@@ -35,8 +35,8 @@ def read_cmd(char_name):
         content = f.readlines()
     # you may also want to remove whitespace characters like `\n` at the end of each line
     #content = [x.strip() for x in content] 
-    #slice from ai gen moves onwards
-    content = content[293:]
+    #slice from ai gen moves to the last 2 lines because we want to avoid the +++++++ line as that will mess things up when were permuting moves
+    content = content[293:-2]
     #get into list
     moves = moves_to_list(content)
     return moves
@@ -89,9 +89,15 @@ def cross_over(male, female, epsilon):
                     cur_movef = male_moves[j]
                     break
         child2.append(cur_movef)
+        
+    #Randomize their respective moves\
+    child1 = np.random.permutation(child1).tolist()
+    child2 = np.random.permutation(child2).tolist()
     
     return child1, child2
     
+
+
 def mutate(child):
     mu_rate = 0.03
     ran = random.uniform(0,1)
@@ -117,6 +123,11 @@ def to_str(moveList):
 
 if __name__ == '__main__':
     print("called directly")
+    #char1 = 'dArwIn_G0_1'
+    #char2 = 'dArwIn_G0_2'
+    
+    #bro =read_cmd(char1)
+    #print(bro)
     #bro,sis = cross_over('dArwIn_G0_1','dArwIn_G0_2',0.5)
     #f = open('mm.txt','w')
     #f.write(to_str(bro))

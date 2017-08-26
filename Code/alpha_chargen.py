@@ -84,9 +84,10 @@ def triggerSelect(move):
     
     #first we need a number between 1 and 4 to set the num of trigger inputs
     num_triggers= random.randrange(1,5)
-    string_to_append ='triggerall = var(59) = 1 \n'
-    string_to_append +='triggerall = Ctrl \n'
+
     #print(num_triggers)
+    
+    string_to_append=''
     
     
     #now generate 3 random numbers between 0 and num_triggers
@@ -259,7 +260,6 @@ def spawn_child(gen, moves, iden):
     
     add_char_to_list(name)
     return name
-
 
 
   

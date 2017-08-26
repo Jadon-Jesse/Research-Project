@@ -70,17 +70,34 @@
  ;
  ;Insert your characters below.
 
-dArwIn_G3_0b 
-dArwIn_G3_0a 
+dArwIn_G2_0 
+dArwIn_G2_3b 
+dArwIn_G2_3a 
+dArwIn_G2_2b 
+dArwIn_G2_2a 
+dArwIn_G2_1b 
+dArwIn_G2_1a 
 dArwIn_G2_0b 
 dArwIn_G2_0a 
+dArwIn_G1_0 
+dArwIn_G1_3b 
+dArwIn_G1_3a 
+dArwIn_G1_2b 
+dArwIn_G1_2a 
+dArwIn_G1_1b 
+dArwIn_G1_1a 
 dArwIn_G1_0b 
 dArwIn_G1_0a 
-
+dArwIn_G0_9 
+dArwIn_G0_8 
+dArwIn_G0_7 
+dArwIn_G0_6 
+dArwIn_G0_5 
+dArwIn_G0_4 
+dArwIn_G0_3 
 dArwIn_G0_2 
 dArwIn_G0_1 
 dArwIn_G0_0 
-
 kfm
 kfm720, stages/kfm.def
 Deadpool

@@ -5,3 +5,6 @@ type = ChangeState
 value = 1120
 triggerall = roundstate = 2
 triggerall = random < 50
+triggerall = power >= 330
+triggerall = var(59) = 1 
+triggerall = Ctrl 

@@ -20,9 +20,9 @@ import parse_file
 #   -NumGen: Number of generations to evolve over
 #   -Ga Params
 
-num_init_pop = 3
+num_init_pop = 10
 #Num generations to evolve initial pop for
-num_generations = 3
+num_generations = 2
 
 list_df_gen = []
 
@@ -105,18 +105,22 @@ crossover_rate = 0.8
 
 mutation_rate = 0.001
 
-def nu_gen(df,size,nu):
+def nu_gen(df,size,nextgen):
     # get elite individuals and addem to our new df 
-    elite_cutoff = math.ceil(elite_rate*size)
+    num_elite = int(math.ceil(elite_rate*size))
     
-    
+    #create new DF to hold the new population
     new_pop = []
     df_newPop = pd.DataFrame(columns=['Name','ELO','Wins','Losses'])
-    df_newPop = df_newPop.append(df[0:elite_cutoff])
-    #children=[]
+    
+    
+    
+    #Append the elite individuals with their exsisting ratings n stuff to the new pop
+    df_newPop = df_newPop.append(df[0:num_elite])
+
     #Perform genertoc operation of crossover 
     #num of time to run loop
-    num_fover = math.floor(crossover_rate * size)
+    num_fover = int(math.floor(crossover_rate * size))
     loop = int(num_fover/2)
     for i in np.arange(loop):
         #choose parents possibly tournment selection later
@@ -129,8 +133,8 @@ def nu_gen(df,size,nu):
         aid = str(i)+"a"
         bid = str(i)+"b"
         #spawn children
-        aname = alpha_chargen.spawn_child(nu, child_amoves, aid)
-        bname = alpha_chargen.spawn_child(nu, child_bmoves, bid)
+        aname = alpha_chargen.spawn_child(nextgen, child_amoves, aid)
+        bname = alpha_chargen.spawn_child(nextgen, child_bmoves, bid)
         print("done")
         new_pop.append(aname)
         new_pop.append(bname)
@@ -145,24 +149,40 @@ def nu_gen(df,size,nu):
 
     #now create new individiuals if necessary
     #....
+    num_nu = size  - (num_elite + num_fover)
+    if num_nu==0:
+        print('No new individuals created')
+    elif num_nu>0:
+        for ind in np.arange(num_nu):
+             name_nu = "dArwIn_G{0}_{1}".format(nextgen,ind)
+             elo_nu = 1000
+             winl = 0
+             #create the new individual randomly
+             alpha_chargen.spawn_randomly(name_nu)
+             df_nu = pd.DataFrame({'Name':[name_nu], 'ELO':[elo_nu], 'Wins':[winl], 'Losses':[winl]}, columns=['Name','ELO','Wins','Losses'])
+             df_newPop = df_newPop.append(df_nu, ignore_index=True)
+    
+    print("generation "+str(nextgen)+" complete!")
+    print("Num survived : {0} ".format(num_elite))
+    print("New children : {0} ".format(num_fover))
+    print("New Inds : {0} ".format(num_nu))
     
     return df_newPop
         
     
 #Initial Population
-#current_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
-current_pop = ['dArwIn_G0_0',
-           'dArwIn_G0_1',
-           'dArwIn_G0_2']
+current_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
+#current_pop = ['dArwIn_G0_0',
+#           'dArwIn_G0_1',
+#           'dArwIn_G0_2']
 
-elo = [1000,1000,1000]
+#elo = [1000,1000,1000]
 
 df_init = pd.DataFrame({'Name':current_pop, 'ELO':elo}, columns=['Name','ELO'])
 df_init['Wins'] = 0
 df_init['Losses'] = 0
    
 list_df_gen.append(df_init)
-
     
 for i in np.arange(num_generations):
     print("Generation : "+str(i))
