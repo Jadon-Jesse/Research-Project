@@ -42,11 +42,11 @@
     <config name="mugen_0_exe" value="C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe"/>
     <config name="mugen_0_icon" value=""/>
     <config name="mugen_0_name" value="MUGEN 1.0"/>
-    <config name="mugen_0_params" value="kfm %0  -p2.ai 1 -rounds 1"/>
+    <config name="mugen_0_params" value="kfm %0 -p1.ai 1 -p2.ai 1 -rounds 1"/>
     <config name="onion_effect" value="1"/>
     <config name="onion_opacity" value="80"/>
     <config name="preset" value="Classic"/>
-    <config name="proj_path" value="C:/Users/Jadon/Work Space 4Y/RP/Code/CharTemplate/kfm"/>
+    <config name="proj_path" value="C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/chars/dArwIn_G0_3"/>
     <config name="quicksearch_back" value="false"/>
     <config name="quicksearch_case" value="false"/>
     <config name="quicksearch_circular" value="true"/>

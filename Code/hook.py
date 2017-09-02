@@ -42,7 +42,7 @@ def fight(char_one, char_two):
 
     mugen_dir = "C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/"
     log = '"C:/Users/Jadon/Work Space 4Y/RP/Code/{0}"'.format(filename)
-    x = "{0} -log {1}-p1 {2} -p2 {3} -p1.ai 1 -p2.ai 1 -rounds {4}".format(mugen_exe,log, char_one, char_two, num_rounds)
+    x = "{0} -log {1} -p1 {2} -p2 {3} -p1.ai 1 -p2.ai 1 -rounds {4}".format(mugen_exe,log, char_one, char_two, num_rounds)
     #print(x)
     #aparantly s.call automatically waits to finish
     p = subprocess.call(x, cwd = mugen_dir )
@@ -50,6 +50,36 @@ def fight(char_one, char_two):
     winner = getWinner(char_one,char_two)
     return winner
     
+
+def fight_par(char_one, char_two, char3, char4):
+    filename = "matchout.txt"
+    num_rounds = "1"
+    filename2 = "matchout2.txt"
+
+
+    #-log matchstats.txt -p1 <p1_name> -p2 <p2_name> -p1.ai 1 -p2.ai 1 -rounds 1
+    #Have to keep the quotes for the cmd 
+    mugen_exe = '"C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe"'
+
+    mugen_dir = "C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/"
+    log1 = '"C:/Users/Jadon/Work Space 4Y/RP/Code/{0}"'.format(filename)
+    log2 = '"C:/Users/Jadon/Work Space 4Y/RP/Code/{0}"'.format(filename2)
+    x = "{0} -log {1}-p1 {2} -p2 {3} -p1.ai 1 -p2.ai 1 -rounds {4}".format(mugen_exe,log1, char_one, char_two, num_rounds)
+    y = "{0} -log {1}-p1 {2} -p2 {3} -p1.ai 1 -p2.ai 1 -rounds {4}".format(mugen_exe,log2, char3, char4, num_rounds)
+    commands=[]
+    commands.append(x)
+    commands.append(y)
+    #print(x)
+    #aparantly s.call automatically waits to finish
+    p = [subprocess.call(cmd, cwd = mugen_dir ) for cmd in commands]
+    
+    winner = getWinner(char_one,char_two)
+    # run in parallel
+    
+    # do other things here..
+    # wait for completion
+    return winner
+
 def round_robin(names):
     #generate round robbin list of player combinations
     line_up = list(itertools.combinations(names, 2))

@@ -9,6 +9,7 @@ import numpy as np
 import itertools
 import math
 import random
+import matplotlib.pyplot as plt
 
 import alpha_chargen
 import hook
@@ -20,11 +21,7 @@ import parse_file
 #   -NumGen: Number of generations to evolve over
 #   -Ga Params
 
-num_init_pop = 10
-#Num generations to evolve initial pop for
-num_generations = 2
 
-list_df_gen = []
 
 def expected_outcome(Rw,Rl):
     e = 1.0/(1+math.pow(10,((Rl - Rw)/400)))
@@ -107,7 +104,7 @@ mutation_rate = 0.001
 
 def nu_gen(df,size,nextgen):
     # get elite individuals and addem to our new df 
-    num_elite = int(math.ceil(elite_rate*size))
+    num_elite = 1 #nt(math.ceil(elite_rate*size))
     
     #create new DF to hold the new population
     new_pop = []
@@ -120,7 +117,7 @@ def nu_gen(df,size,nextgen):
 
     #Perform genertoc operation of crossover 
     #num of time to run loop
-    num_fover = int(math.floor(crossover_rate * size))
+    num_fover = 2#int(math.floor(crossover_rate * size))
     loop = int(num_fover/2)
     for i in np.arange(loop):
         #choose parents possibly tournment selection later
@@ -170,33 +167,56 @@ def nu_gen(df,size,nextgen):
     return df_newPop
         
     
-#Initial Population
-current_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
-#current_pop = ['dArwIn_G0_0',
-#           'dArwIn_G0_1',
-#           'dArwIn_G0_2']
 
-#elo = [1000,1000,1000]
+num_init_pop = 4
+#Num generations to evolve initial pop for
+num_generations = 1
+
+list_df_gen = []
+
+#Initial Population
+#current_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
+current_pop = ['dArwIn_G0_0',
+           'dArwIn_G0_1',
+           'dArwIn_G0_2']
+
+elo = [1000,1000,1000]
 
 df_init = pd.DataFrame({'Name':current_pop, 'ELO':elo}, columns=['Name','ELO'])
 df_init['Wins'] = 0
 df_init['Losses'] = 0
    
 list_df_gen.append(df_init)
+ratio=[]
     
 for i in np.arange(num_generations):
     print("Generation : "+str(i))
     match_stats = round_robin(current_pop, i)
     #Sort our current pupulation interms of ELO
     df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
-    print(df_sorted.head())
-    #hah! Get it?
-    new_pop = nu_gen(df_sorted, len(df_sorted),i+1)
+    #print(df_sorted.head())
+    #Get last elo
+    v = df_sorted.iloc[-1].ELO
+    ratio.append(v)
+
+    #Only replace population if were not on the last generation
+    if i < num_generations-1:        
+        #hah! Get it?
+        new_pop = nu_gen(df_sorted, len(df_sorted),i+1)
+        #replace current pop with new pop
+        current_pop = new_pop.Name.tolist()
+        #keep track
+        list_df_gen.append(new_pop)
+    #On last generation... do some stuff with the list of dfs
+    elif i == num_generations-1:
+        print("DONE!")
+        plt.scatter(range(0,len(ratio)), ratio)
+        plt.title("Lowest ELO per Generation")
+        plt.xlabel("Generation")
+        plt.ylabel("ELO")
+        plt.show()
     
-    #replace current pop with new pop
-    current_pop = new_pop.Name.tolist()
-    #keep track
-    list_df_gen.append(new_pop)
+
     
     
     

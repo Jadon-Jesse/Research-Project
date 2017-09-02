@@ -2,7 +2,7 @@
 M.U.G.E.N ver 1.00 (2010.06.29) status log
 ------------------------------------------
 Parsing command line...
-Command line: C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe -log -p1 -p2 -p1.ai -p2.ai -rounds
+Command line: C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe -log -p1 -p2 -p1.ai -p2.ai -rounds -nojoy -nosound
 Parse command line OK
 Initializing...
 Allocating game variables
@@ -10,16 +10,13 @@ Reading configuration file...OK
 Initializing timer...performance timer enabled...frequency 2435875...OK
 Initializing keyboard...configuring...OK
 Initializing input engine...OK
-Initializing sound...OK
-Initializing BGM...BGMThreadInit returned 0
-OK
+Initializing sound...sound is disabled
 Initializing graphics...gameCoord 1280x720...render mode 0_0...trying 1280x720x16 mode 0x0...success...OK
 Setting callbacks...OK
 Initializing font...OK
 Initializing game variables...OK
 Loading system fonts...OK
 Loading options...
-Initializing pads...failed
 Reinitializing input engine...OK
 Remapping keys...OK
 Reinitializing input engine...OK
@@ -27,7 +24,6 @@ Options loaded OK
 Loading system...
   Load system file system.def...OK
   Load system spr...OK
-  Load system snd...OK
   Load system fonts...OK
   Load system anim...OK
   Load [Title Info]...OK
@@ -65,46 +61,44 @@ Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
-Loading character chars/dArwIn_G1_3b/dArwIn_G1_3b.def...
+Loading character chars/dArwIn_G0_1/dArwIn_G0_1.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G1_3b.cmd...OK
+  Loading cmd command set dArwIn_G0_1.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G1_3b.cmd...OK
+  Loading cmd state entry dArwIn_G0_1.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
   Loading anim kfm.air...OK
-  Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3112 expressions (1083 on trigger lines)
-Character dArwIn_G1_3b.def loaded OK
-Loading character chars/dArwIn_G1_0/dArwIn_G1_0.def...
+  3125 expressions (1096 on trigger lines)
+Character dArwIn_G0_1.def loaded OK
+Loading character chars/dArwIn_G0_2/dArwIn_G0_2.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G1_0.cmd...OK
+  Loading cmd command set dArwIn_G0_2.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G1_0.cmd...OK
+  Loading cmd state entry dArwIn_G0_2.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
   Loading anim kfm.air...OK
-  Loading snd kfm.snd...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3119 expressions (1090 on trigger lines)
-Character dArwIn_G1_0.def loaded OK
+  3114 expressions (1085 on trigger lines)
+Character dArwIn_G0_2.def loaded OK
 Start of game loop
 End of game loop
-Total time: 29.27s
-Total frames: 1757 	Skipped frames: 0
+Total time: 30.05s
+Total frames: 1804 	Skipped frames: 27
 Avg game rate: 60.03
-Avg frame rate: 60.03
+Avg frame rate: 59.13
 
 Returned from main loop
 Deinitializing...
-Frames      : 1757
-Time elapsed: 29.340 sec
-ticks: 2934, tps: 100, start 36, end 2970
+Frames      : 1804
+Time elapsed: 30.310 sec
+ticks: 3031, tps: 100, start 9, end 3040
 
 Clearing player cache...OK
 Freeing character info...OK
@@ -120,3 +114,4 @@ Deinitializing sound...OK
 Successful program termination.
 
 Log file successfully closed.
+
