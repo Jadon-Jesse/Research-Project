@@ -10,6 +10,7 @@ import itertools
 import math
 import random
 import matplotlib.pyplot as plt
+from subprocess import Popen
 
 import alpha_chargen
 import hook
@@ -35,6 +36,10 @@ def update_charsheet(winner, looser, i):
     #Update wins losses
     df.loc[df.loc[df.Name == winner].index,'Wins'] +=1
     df.loc[df.loc[df.Name == looser].index, 'Losses'] +=1
+          
+    #Update Total_Matches Played
+    df.loc[df.loc[df.Name == winner].index,'Total_Matches'] +=1
+    df.loc[df.loc[df.Name == looser].index,'Total_Matches'] +=1
         
     #Calculate new ELO Rating
     Ep1w = float(df[df.Name == winner].ELO)
@@ -86,8 +91,84 @@ def round_robin(names, generation):
         #print("Winner : "+winner)
     df_matches = pd.DataFrame({"MatchNo":match_list,"P1":p1_list,"P2":p2_list,"Winner":winner_list,"ELO":elo_list}, columns = ["MatchNo","P1","P2","Winner","ELO"])
     return df_matches
+
+
+def build_cmds(round_list, gen):
+    mugen_exe = '"C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe"'
+    num_rounds = 1
+    logs=[]
+    cmds = []
+    for i in np.arange(len(round_list)):
+        log_i =  '"C:/Users/Jadon/Work Space 4Y/RP/Code/Logs/G{0}_{1}.txt"'.format(gen,i)
+        x = "{0} -log {1} -p1 {2} -p2 {3} -p1.ai 1 -p2.ai 1 -rounds {4} -nojoy -nosound".format(mugen_exe,log_i, round_list[i][0], round_list[i][1], num_rounds)
+        cmds.append(x)
+        logs.append(log_i)
+    return cmds, logs
+
+def get_winlos(logs):
+    who_won =  "-1"
+    who_lost ="-1"
+    
+    winner="-1"
+    looser ="-1"
+
+    win_l=[]
+    los_l=[]
+    
+    for i in np.arange(len(logs)):
+        file_quotes = logs[i]
+        #strip oytter pair of quotes 
+        file = file_quotes[1:-1]
+        with open(file) as f:
+            for line in f:
+                if "winningteam = 1\n" in line:
+                    who_won = "1"
+                    who_lost="2"
+                elif "winningteam = 2\n" in line:
+                    who_won = "2"
+                    who_lost = "1"
+                    
+                get_win = "p"+str(who_won)+".name ="
+                get_los = "p"+str(who_lost)+".name ="
+                if line.find(get_win)==0:
+                    win_split = line.split('=')
+                    winner = win_split[-1]
+                    win_l.append(winner.strip())
+                if line.find(get_los)==0:
+                    los_split = line.split('=')
+                    looser = los_split[-1]
+                    los_l.append(looser.strip())
+    return win_l, los_l
+
+    
+def round_robin_parallel(names, generation):
+    #generate round robbin list of player combinations
+    line_up = list(itertools.combinations(names, 2))
+    
+    #get list of commands to parallelize
+    commands, logs = build_cmds(line_up, generation)
+    mugen_dir = 'C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/'
+    
+    # run in parallel
+    processes = [Popen(cmd, shell=True, cwd = mugen_dir) for cmd in commands]
+    # do other things here..
+    print("doing stuff")
+    # wait for completion
+    for p in processes: 
+        p.wait()
+        
+    #get ALL winners and losers from logs for that generation
+    #winlist, loslist = get_winlos(logs)
+    winlist,loslist = get_winlos(logs)
     
 
+    #Update the char sheet in sequence
+    for i in np.arange(len(winlist)):
+        
+        update_charsheet(winlist[i],loslist[i],generation)
+        
+        #print("Winner : "+winner)
+   
 
     
     
@@ -108,7 +189,7 @@ def nu_gen(df,size,nextgen):
     
     #create new DF to hold the new population
     new_pop = []
-    df_newPop = pd.DataFrame(columns=['Name','ELO','Wins','Losses'])
+    df_newPop = pd.DataFrame(columns=['Name','ELO','Wins','Losses','Total_Matches'])
     
     
     
@@ -138,8 +219,9 @@ def nu_gen(df,size,nextgen):
         #create temp dfs
         winlos = 0
         elo = 1000
-        dfa = pd.DataFrame({'Name':[aname], 'ELO':[elo], 'Wins':[winlos], 'Losses':[winlos]}, columns=['Name','ELO','Wins','Losses'])
-        dfb = pd.DataFrame({'Name':[bname], 'ELO':[elo], 'Wins':[winlos], 'Losses':[winlos]}, columns=['Name','ELO','Wins','Losses'])
+        matches = 0
+        dfa = pd.DataFrame({'Name':[aname], 'ELO':[elo], 'Wins':[winlos], 'Losses':[winlos], 'Total_Matches':[matches]}, columns=['Name','ELO','Wins','Losses', 'Total_Matches'])
+        dfb = pd.DataFrame({'Name':[bname], 'ELO':[elo], 'Wins':[winlos], 'Losses':[winlos], 'Total_Matches':[matches]}, columns=['Name','ELO','Wins','Losses', 'Total_Matches'])
         df_newPop = df_newPop.append(dfa, ignore_index=True)
         df_newPop = df_newPop.append(dfb, ignore_index=True)
      
@@ -154,9 +236,10 @@ def nu_gen(df,size,nextgen):
              name_nu = "dArwIn_G{0}_{1}".format(nextgen,ind)
              elo_nu = 1000
              winl = 0
+             matches=0
              #create the new individual randomly
              alpha_chargen.spawn_randomly(name_nu)
-             df_nu = pd.DataFrame({'Name':[name_nu], 'ELO':[elo_nu], 'Wins':[winl], 'Losses':[winl]}, columns=['Name','ELO','Wins','Losses'])
+             df_nu = pd.DataFrame({'Name':[name_nu], 'ELO':[elo_nu], 'Wins':[winl], 'Losses':[winl],'Total_Matches':[matches]}, columns=['Name','ELO','Wins','Losses','Total_Matches'])
              df_newPop = df_newPop.append(df_nu, ignore_index=True)
     
     print("generation "+str(nextgen)+" complete!")
@@ -170,28 +253,30 @@ def nu_gen(df,size,nextgen):
 
 num_init_pop = 4
 #Num generations to evolve initial pop for
-num_generations = 1
+num_generations = 5
 
 list_df_gen = []
 
 #Initial Population
-#current_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
-current_pop = ['dArwIn_G0_0',
-           'dArwIn_G0_1',
-           'dArwIn_G0_2']
+current_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
+#current_pop = ['dArwIn_G0_0',
+#           'dArwIn_G0_1',
+#           'dArwIn_G0_2']
 
-elo = [1000,1000,1000]
+#elo = [1000,1000,1000]
 
 df_init = pd.DataFrame({'Name':current_pop, 'ELO':elo}, columns=['Name','ELO'])
 df_init['Wins'] = 0
 df_init['Losses'] = 0
+df_init['Total_Matches']=0
    
 list_df_gen.append(df_init)
 ratio=[]
     
 for i in np.arange(num_generations):
     print("Generation : "+str(i))
-    match_stats = round_robin(current_pop, i)
+    #fight chars in round robbin
+    round_robin_parallel(current_pop, i)
     #Sort our current pupulation interms of ELO
     df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
     #print(df_sorted.head())
