@@ -42,7 +42,7 @@ def fight(char_one, char_two):
 
     mugen_dir = "C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/"
     log = '"C:/Users/Jadon/Work Space 4Y/RP/Code/{0}"'.format(filename)
-    x = "{0} -log {1} -p1 {2} -p2 {3} -p1.ai 1 -p2.ai 1 -rounds {4}".format(mugen_exe,log, char_one, char_two, num_rounds)
+    x = "{0} -log {1} -p1 {2} -p2 {3} -p1.ai 1 -p2.ai 1 -rounds {4} -nosound".format(mugen_exe,log, char_one, char_two, num_rounds)
     #print(x)
     #aparantly s.call automatically waits to finish
     p = subprocess.call(x, cwd = mugen_dir )

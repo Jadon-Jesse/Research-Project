@@ -253,7 +253,7 @@ def nu_gen(df,size,nextgen):
 
 num_init_pop = 4
 #Num generations to evolve initial pop for
-num_generations = 5
+num_generations = 3
 
 list_df_gen = []
 
@@ -276,7 +276,8 @@ ratio=[]
 for i in np.arange(num_generations):
     print("Generation : "+str(i))
     #fight chars in round robbin
-    round_robin_parallel(current_pop, i)
+    #round_robin_parallel(current_pop, i)
+    m = round_robin(current_pop,i)
     #Sort our current pupulation interms of ELO
     df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
     #print(df_sorted.head())

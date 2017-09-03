@@ -286,7 +286,14 @@ def initial_population(num_to_gen, gen):
 
 
 if __name__ =='__main__':
+    import hook
+    
     print("main called directly")
+    name = "TestSubjectB"
+    spawn_randomly(name)
+    
+    winner = hook.fight(name, "kfm")
+    
 
 
 

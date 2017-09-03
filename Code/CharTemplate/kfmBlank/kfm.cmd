@@ -286,6 +286,25 @@ trigger31 = command = "holddown"
 v = 59
 value = 1
 
+;===========================================================================
+;This is not a move, but it sets up var(1) to be 1 if conditions are right
+;for a combo into a special move (used below).
+;Since a lot of special moves rely on the same conditions, this reduces
+;redundant logic.
+[State -1, Combo condition Reset]
+type = VarSet
+trigger1 = 1
+var(1) = 0
+
+[State -1, Combo condition Check]
+type = VarSet
+trigger1 = statetype != A
+trigger1 = ctrl
+trigger2 = (stateno = [200,299]) || (stateno = [400,499])
+trigger2 = stateno != 440 ;Except for sweep kick
+trigger2 = movecontact
+trigger3 = stateno = 1310 || stateno = 1330 ;From blocking
+var(1) = 1
 
 ;++++++++++++++++++++++
 ;Generated AI goes HERE

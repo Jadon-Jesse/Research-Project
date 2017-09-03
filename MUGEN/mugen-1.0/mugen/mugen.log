@@ -2,7 +2,7 @@
 M.U.G.E.N ver 1.00 (2010.06.29) status log
 ------------------------------------------
 Parsing command line...
-Command line: mugen.exe -p1 -p2 -p1.ai -p2.ai -rounds -nosound
+Command line: C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe -log -p1 -p2 -p1.ai -p2.ai -rounds -nosound
 Parse command line OK
 Initializing...
 Allocating game variables
@@ -62,44 +62,44 @@ Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
-Loading character chars/dArwIn_G3_0b/dArwIn_G3_0b.def...
+Loading character chars/dArwIn_G2_0b/dArwIn_G2_0b.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G3_0b.cmd...OK
+  Loading cmd command set dArwIn_G2_0b.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G3_0b.cmd...OK
+  Loading cmd state entry dArwIn_G2_0b.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
   Loading anim kfm.air...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3126 expressions (1097 on trigger lines)
-Character dArwIn_G3_0b.def loaded OK
-Loading character chars/Deadpool/Deadpool.def...
+  3162 expressions (1133 on trigger lines)
+Character dArwIn_G2_0b.def loaded OK
+Loading character chars/dArwIn_G2_0/dArwIn_G2_0.def...
   Loading info...OK
-  Loading cmd command set Deadpool.cmd...OK
-  Loading cns Deadpool.cns...OK
-  Loading cmd state entry Deadpool.cmd...OK
+  Loading cmd command set dArwIn_G2_0.cmd...OK
+  Loading cns kfm.cns...OK
+  Loading cmd state entry dArwIn_G2_0.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
-  Loading sff Deadpool.sff...OK
-  Loading anim Deadpool.air...OK
-  Loading pals...(1,1)(1,2)(1,3)(1,4)(1,5)(1,6)OK
-  SFF v1.01 palette hack engaged.
-  11958 expressions (3582 on trigger lines)
-Character Deadpool.def loaded OK
+  Loading sff kfm.sff...OK
+  Loading anim kfm.air...OK
+  Loading pals...OK
+  Loading learned AI kfm.ai...OK
+  3166 expressions (1137 on trigger lines)
+Character dArwIn_G2_0.def loaded OK
 Start of game loop
 End of game loop
-Total time: 90.25s
-Total frames: 5417 	Skipped frames: 0
-Avg game rate: 60.02
-Avg frame rate: 60.02
+Total time: 28.50s
+Total frames: 1711 	Skipped frames: 0
+Avg game rate: 60.04
+Avg frame rate: 60.04
 
 Returned from main loop
 Deinitializing...
-Frames      : 5417
-Time elapsed: 90.910 sec
-ticks: 9091, tps: 100, start 4, end 9095
+Frames      : 1711
+Time elapsed: 28.550 sec
+ticks: 2855, tps: 100, start 5, end 2860
 
 Clearing player cache...OK
 Freeing character info...OK
