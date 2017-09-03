@@ -32,25 +32,34 @@ def expected_outcome(Rw,Rl):
 
 def update_charsheet(winner, looser, i):
     df = list_df_gen[i]
-
-    #Update wins losses
-    df.loc[df.loc[df.Name == winner].index,'Wins'] +=1
-    df.loc[df.loc[df.Name == looser].index, 'Losses'] +=1
-          
-    #Update Total_Matches Played
-    df.loc[df.loc[df.Name == winner].index,'Total_Matches'] +=1
-    df.loc[df.loc[df.Name == looser].index,'Total_Matches'] +=1
+    
+    #if draw darN == draw darM match
+    winsp = winner.split(" ")
+    losp = looser.split(" ")
+    
+    if winsp[0] == losp[0]:
+        print("Draw between {0} and {1}".format(winsp[1], losp[1]))
         
-    #Calculate new ELO Rating
-    Ep1w = float(df[df.Name == winner].ELO)
-    Ep2l = float(df[df.Name == looser].ELO)
-    #P1 = Winner here
-    Rp1 = Ep1w + 50.0*(1.0 - expected_outcome(Ep1w,Ep2l ))
-    #P2 = Looser here
-    Rp2 = Ep2l + 50.0*(0.0 - expected_outcome(Ep2l,Ep1w ))
-     #Update ELO
-    df.loc[df.loc[df.Name == winner].index,'ELO'] = Rp1
-    df.loc[df.loc[df.Name == looser].index, 'ELO'] = Rp2
+        
+    else:
+        #Update wins losses
+        df.loc[df.loc[df.Name == winner].index,'Wins'] +=1
+        df.loc[df.loc[df.Name == looser].index, 'Losses'] +=1
+              
+        #Update Total_Matches Played
+        df.loc[df.loc[df.Name == winner].index,'Total_Matches'] +=1
+        df.loc[df.loc[df.Name == looser].index,'Total_Matches'] +=1
+            
+        #Calculate new ELO Rating
+        Ep1w = float(df[df.Name == winner].ELO)
+        Ep2l = float(df[df.Name == looser].ELO)
+        #P1 = Winner here
+        Rp1 = Ep1w + 50.0*(1.0 - expected_outcome(Ep1w,Ep2l ))
+        #P2 = Looser here
+        Rp2 = Ep2l + 50.0*(0.0 - expected_outcome(Ep2l,Ep1w ))
+         #Update ELO
+        df.loc[df.loc[df.Name == winner].index,'ELO'] = Rp1
+        df.loc[df.loc[df.Name == looser].index, 'ELO'] = Rp2
     
     
       
@@ -121,23 +130,47 @@ def get_winlos(logs):
         file = file_quotes[1:-1]
         with open(file) as f:
             for line in f:
+                #Draw Game
+                if "winningteam = 0\n" in line:
+                    who_won = "0"
+                    who_lost = "0"
+                #TEam 1 Wins
                 if "winningteam = 1\n" in line:
                     who_won = "1"
                     who_lost="2"
-                elif "winningteam = 2\n" in line:
+                #Team 2 wins
+                if "winningteam = 2\n" in line:
                     who_won = "2"
                     who_lost = "1"
-                    
-                get_win = "p"+str(who_won)+".name ="
-                get_los = "p"+str(who_lost)+".name ="
-                if line.find(get_win)==0:
-                    win_split = line.split('=')
-                    winner = win_split[-1]
-                    win_l.append(winner.strip())
-                if line.find(get_los)==0:
-                    los_split = line.split('=')
-                    looser = los_split[-1]
-                    los_l.append(looser.strip())
+                #if draw then consider both as losses so elo stays same for them
+                if who_won =="0" and who_lost =="0":
+                    #append flags
+                    #get both chars name
+                    get_drwp1= "p1"+".name ="
+                    if line.find(get_drwp1)==0:
+                        drw_split = line.split('=')
+                        draw = drw_split[-1]
+                        name="draw "+str(draw.strip())
+                        win_l.append(name)
+                    get_drwp2= "p2"+".name ="    
+                    if line.find(get_drwp2)==0:
+                        drw_split = line.split('=')
+                        draw = drw_split[-1]
+                        name="draw "+str(draw.strip())
+                        los_l.append(name)
+                        
+                #otherwise get winner and looser
+                else:
+                    get_win = "p"+str(who_won)+".name ="
+                    get_los = "p"+str(who_lost)+".name ="
+                    if line.find(get_win)==0:
+                        win_split = line.split('=')
+                        winner = win_split[-1]
+                        win_l.append(winner.strip())
+                    if line.find(get_los)==0:
+                        los_split = line.split('=')
+                        looser = los_split[-1]
+                        los_l.append(looser.strip())
     return win_l, los_l
 
     
@@ -253,7 +286,7 @@ def nu_gen(df,size,nextgen):
 
 num_init_pop = 4
 #Num generations to evolve initial pop for
-num_generations = 3
+num_generations = 5
 
 list_df_gen = []
 
@@ -276,8 +309,8 @@ ratio=[]
 for i in np.arange(num_generations):
     print("Generation : "+str(i))
     #fight chars in round robbin
-    #round_robin_parallel(current_pop, i)
-    m = round_robin(current_pop,i)
+    round_robin_parallel(current_pop, i)
+    #m = round_robin(current_pop,i)
     #Sort our current pupulation interms of ELO
     df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
     #print(df_sorted.head())
