@@ -8,9 +8,9 @@ stage = stages/stage0-720.def
 winningteam = 2
 timeleft = 0.00
 p1.name = dArwIn_G0_0
-p1.life = 403
-p1.power = 449
+p1.life = 648
+p1.power = 558
 p2.name = dArwIn_G0_3
-p2.life = 632
-p2.power = 894
+p2.life = 822
+p2.power = 708
 

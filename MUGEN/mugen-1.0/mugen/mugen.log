@@ -61,44 +61,44 @@ Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
-Loading character chars/dArwIn_G1_2/dArwIn_G1_2.def...
+Loading character chars/dArwIn_G4_0b/dArwIn_G4_0b.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G1_2.cmd...OK
+  Loading cmd command set dArwIn_G4_0b.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G1_2.cmd...OK
+  Loading cmd state entry dArwIn_G4_0b.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
   Loading anim kfm.air...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3155 expressions (1126 on trigger lines)
-Character dArwIn_G1_2.def loaded OK
-Loading character chars/dArwIn_G1_4/dArwIn_G1_4.def...
+  3152 expressions (1123 on trigger lines)
+Character dArwIn_G4_0b.def loaded OK
+Loading character chars/dArwIn_G4_0/dArwIn_G4_0.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G1_4.cmd...OK
+  Loading cmd command set dArwIn_G4_0.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G1_4.cmd...OK
+  Loading cmd state entry dArwIn_G4_0.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
   Loading anim kfm.air...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3166 expressions (1137 on trigger lines)
-Character dArwIn_G1_4.def loaded OK
+  3134 expressions (1105 on trigger lines)
+Character dArwIn_G4_0.def loaded OK
 Start of game loop
 End of game loop
-Total time: 234.97s
-Total frames: 1838 	Skipped frames: 224
-Avg game rate: 7.82
-Avg frame rate: 6.87
+Total time: 29.65s
+Total frames: 1780 	Skipped frames: 4
+Avg game rate: 60.03
+Avg frame rate: 59.90
 
 Returned from main loop
 Deinitializing...
-Frames      : 1838
-Time elapsed: 235.340 sec
-ticks: 23534, tps: 100, start 126, end 23660
+Frames      : 1780
+Time elapsed: 29.730 sec
+ticks: 2973, tps: 100, start 13, end 2986
 
 Clearing player cache...OK
 Freeing character info...OK
@@ -114,5 +114,4 @@ Deinitializing sound...OK
 Successful program termination.
 
 Log file successfully closed.
-d.
 ed.

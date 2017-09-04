@@ -7,10 +7,10 @@ stage = stages/stage0-720.def
 [Match 1 Round 1]
 winningteam = 1
 timeleft = 0.00
-p1.name = dArwIn_G3_0
-p1.life = 900
-p1.power = 788
+p1.name = dArwIn_G0_1
+p1.life = 523
+p1.power = 282
 p2.name = dArwIn_G4_0b
-p2.life = 585
-p2.power = 437
+p2.life = 333
+p2.power = 1167
 

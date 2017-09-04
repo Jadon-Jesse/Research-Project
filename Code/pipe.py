@@ -216,6 +216,21 @@ crossover_rate = 0.8
 
 mutation_rate = 0.001
 
+def tourn_sel(df):
+    r = random.sample(range(0,len(df)),4)
+    p1=""
+    p2=""
+    if df.loc[r[0]].ELO > df.loc[r[1]].ELO:
+        p1 = df.loc[r[0]].Name
+    if df.loc[r[0]].ELO < df.loc[r[1]].ELO:
+        p1 = df.loc[r[1]].Name
+    if df.loc[r[2]].ELO > df.loc[r[3]].ELO:
+        p2 = df.loc[r[2]].Name
+    if df.loc[r[2]].ELO < df.loc[r[3]].ELO:
+        p2 = df.loc[r[3]].Name
+                   
+    return p1, p2
+
 def nu_gen(df,size,nextgen):
     # get elite individuals and addem to our new df 
     num_elite = 1 #nt(math.ceil(elite_rate*size))
@@ -236,9 +251,10 @@ def nu_gen(df,size,nextgen):
     for i in np.arange(loop):
         #choose parents possibly tournment selection later
         print("creating kids")
-        r = random.sample(range(0,len(df)),2)
-        par1 = df.loc[r[0]].Name
-        par2 = df.loc[r[1]].Name
+        #r = random.sample(range(0,len(df)),2)
+        par1,par2 = tourn_sel(df)
+        #par1 = df.loc[r[0]].Name
+        #par2 = df.loc[r[1]].Name
         #generate their childrens moves
         child_amoves, child_bmoves = parse_file.create_children(par1,par2, 0.5)
         aid = str(i)+"a"
