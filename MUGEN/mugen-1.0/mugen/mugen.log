@@ -61,19 +61,19 @@ Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
-Loading character chars/dArwIn_G4_0b/dArwIn_G4_0b.def...
+Loading character chars/dArwIn_G3_0/dArwIn_G3_0.def...
   Loading info...OK
-  Loading cmd command set dArwIn_G4_0b.cmd...OK
+  Loading cmd command set dArwIn_G3_0.cmd...OK
   Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G4_0b.cmd...OK
+  Loading cmd state entry dArwIn_G3_0.cmd...OK
   Loading common states common1.cns...OK
   Unloading command names...OK
   Loading sff kfm.sff...OK
   Loading anim kfm.air...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3152 expressions (1123 on trigger lines)
-Character dArwIn_G4_0b.def loaded OK
+  3146 expressions (1117 on trigger lines)
+Character dArwIn_G3_0.def loaded OK
 Loading character chars/dArwIn_G4_0/dArwIn_G4_0.def...
   Loading info...OK
   Loading cmd command set dArwIn_G4_0.cmd...OK
@@ -85,20 +85,20 @@ Loading character chars/dArwIn_G4_0/dArwIn_G4_0.def...
   Loading anim kfm.air...OK
   Loading pals...OK
   Loading learned AI kfm.ai...OK
-  3134 expressions (1105 on trigger lines)
+  3156 expressions (1127 on trigger lines)
 Character dArwIn_G4_0.def loaded OK
 Start of game loop
 End of game loop
-Total time: 29.65s
-Total frames: 1780 	Skipped frames: 4
-Avg game rate: 60.03
-Avg frame rate: 59.90
+Total time: 57.02s
+Total frames: 3422 	Skipped frames: 74
+Avg game rate: 60.01
+Avg frame rate: 58.72
 
 Returned from main loop
 Deinitializing...
-Frames      : 1780
-Time elapsed: 29.730 sec
-ticks: 2973, tps: 100, start 13, end 2986
+Frames      : 3422
+Time elapsed: 57.100 sec
+ticks: 5710, tps: 100, start 9, end 5719
 
 Clearing player cache...OK
 Freeing character info...OK
@@ -114,4 +114,5 @@ Deinitializing sound...OK
 Successful program termination.
 
 Log file successfully closed.
+sed.
 ed.
