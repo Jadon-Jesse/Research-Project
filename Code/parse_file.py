@@ -119,14 +119,29 @@ def to_str(moveList):
     for i in np.arange(len(moveList)):
         s+=(''.join(moveList[i]))
     return s
+
+def to_str_nospace(moveList):
+    s = ''#"'
+    for i in np.arange(len(moveList)):
+        s+=(''.join(moveList[i]))
+        s = s.replace(' ', ';space')
+        s = s.replace('\n',';newline')
+        s = s.replace('>',';gtrthan')
+        s = s.replace('<',';lssthan')
+    #s +='"'
+    return s
     
 
 if __name__ == '__main__':
     print("called directly")
-    #char1 = 'dArwIn_G0_1'
+    char1 = 'dArwIn_G0_1'
     #char2 = 'dArwIn_G0_2'
     
-    #bro =read_cmd(char1)
+    bro =read_cmd(char1)
+    li = to_str_nospace(bro)
+    file = open("check2.txt","w")
+    file.write(li)
+    file.close
     #print(bro)
     #bro,sis = cross_over('dArwIn_G0_1','dArwIn_G0_2',0.5)
     #f = open('mm.txt','w')

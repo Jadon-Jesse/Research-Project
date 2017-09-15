@@ -106,9 +106,9 @@ def round_robin(names):
 if __name__ == '__main__':
     #ckm ='Kung Fu Man'
     #m = 'kfm2'
-    #names = ["dArwIn_Flafeen",
-    #    "dArwIn_Flafoon"]
-    #df = round_robin(names)
+    names = ["dArwIn_G4_0",
+        "dArwIn_G9_0"]
+    df = round_robin(names)
     print("Called directly from main")
 
 

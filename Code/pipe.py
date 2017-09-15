@@ -10,6 +10,9 @@ import itertools
 import math
 import random
 import matplotlib.pyplot as plt
+import urllib
+import pymysql
+import time
 from subprocess import Popen
 
 import alpha_chargen
@@ -298,23 +301,144 @@ def nu_gen(df,size,nextgen):
     
     return df_newPop
         
+#Evolve locally using parallel sims
+def evolve_std(num_generations, current_pop):
+    for i in np.arange(num_generations):
+        print("Generation : "+str(i))
+        #fight chars in round robbin
+        round_robin_parallel(current_pop, i)
+        #m = round_robin(current_pop,i)
+        #Sort our current pupulation interms of ELO
+        df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
+        #print(df_sorted.head())
+        #Get last elo
+        v = df_sorted.iloc[-1].ELO
+        ratio.append(v)
+    
+        #Only replace population if were not on the last generation
+        if i < num_generations-1:        
+            #hah! Get it?
+            new_pop = nu_gen(df_sorted, len(df_sorted),i+1)
+            #replace current pop with new pop
+            current_pop = new_pop.Name.tolist()
+            #keep track
+            list_df_gen.append(new_pop)
+        #On last generation... do some stuff with the list of dfs
+        elif i == num_generations-1:
+            print("DONE!")
+            plt.scatter(range(0,len(ratio)), ratio)
+            plt.title("Lowest ELO per Generation")
+            plt.xlabel("Generation")
+            plt.ylabel("ELO")
+            plt.show()
+            
+def update_gen_from_db(gen):
+    # Open database connection
+    db = pymysql.connect("jadonjes.heliohost.org","jadonjes_darwin","HackThisDB1","jadonjes_OUTCOME" )
+    
+    # prepare a cursor object using cursor() method
+    cursor = db.cursor()
+    
+    # Prepare SQL query to INSERT a record into the database.
+    sql = "SELECT * FROM MatchOutTBL WHERE generation = '{0}'".format(str(gen))
+    try:
+       # Execute the SQL command
+       cursor.execute(sql)
+       # Fetch all the rows in a list of lists.
+       results = cursor.fetchall()
+       for row in results:
+          iden = row[0]
+          genn = row[1]
+          match = row[2]
+          winner = row[3]
+          looser = row[4]
+          update_charsheet(winner,looser,gen)
+          # Now print fetched result
+          #print ("{0} {1} {2} {3} {4} \n".format(iden,genn,match, winner,looser))
+    except:
+       print ("Error: unable to fetch data")
+
+  
+#Evolve the population on the cloud
+#for each generation we gen the list of matches to take place 
+#Then we post that to our network load bal
+#Once over we go collect the reults and update the char sheet
+def evolve_on_cloud(num_generations, current_pop):
+    for i in np.arange(num_generations):
+        print("Generation : "+str(i))
+        line_up = list(itertools.combinations(current_pop, 2))
+        #Post each chars deets for each match
+        for match in np.arange(len(line_up)):
+            genn = i
+            matchnu=match
+            p1n = line_up[match][0]
+            p1moves = parse_file.read_cmd(p1n)
+            p1str = parse_file.to_str(p1moves)
+            p2n = line_up[match][1]
+            p2moves = parse_file.read_cmd(p2n)
+            p2str = parse_file.to_str(p2moves)
+
+            data = urllib.parse.urlencode({"matchnum":matchnu,"gen":genn,"p1name":p1n , "p1moves":p1str, "p2name": p2n, "p2moves":p2str})
+            data = data.encode('utf-8')
+            request = urllib.request.Request("http://104.197.115.172")
+            
+            # adding charset parameter to the Content-Type header.
+            request.add_header("Content-Type","application/x-www-form-urlencoded;charset=utf-8")
+            
+            f = urllib.request.urlopen(request, data)
+            print(f.read().decode('utf-8'))
+        
+        #after the matches are over we need to pull the reults for that generation
+        #from the db
+        #And just to make sure that all the simulations have completed well sleep for some time
+        print("Wait for 45 seconds.")
+        time.sleep(45)
+        print("Updating char sheet...")
+        #update the char sheet 
+        update_gen_from_db(i)
+        
+        #Now just update relevent dfs and create new pop
+        #Sort our current pupulation interms of ELO
+        df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
+        #print(df_sorted.head())
+        #Get last elo
+        v = df_sorted.iloc[-1].ELO
+        ratio.append(v)
+    
+        #Only replace population if were not on the last generation
+        if i < num_generations-1:        
+            #hah! Get it?
+            new_pop = nu_gen(df_sorted, len(df_sorted),i+1)
+            #replace current pop with new pop
+            current_pop = new_pop.Name.tolist()
+            #keep track
+            list_df_gen.append(new_pop)
+        #On last generation... do some stuff with the list of dfs
+        elif i == num_generations-1:
+            print("DONE!")
+            plt.scatter(range(0,len(ratio)), ratio)
+            plt.title("Lowest ELO per Generation")
+            plt.xlabel("Generation")
+            plt.ylabel("ELO")
+            plt.show()
+        
     
 
 num_init_pop = 4
 #Num generations to evolve initial pop for
-num_generations = 5
+num_generations = 10
 
 list_df_gen = []
 
 #Initial Population
-current_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
-#current_pop = ['dArwIn_G0_0',
+init_pop, elo = alpha_chargen.initial_population(num_init_pop, 0)
+#init_pop = ['dArwIn_G0_0',
 #           'dArwIn_G0_1',
 #           'dArwIn_G0_2']
 
 #elo = [1000,1000,1000]
 
-df_init = pd.DataFrame({'Name':current_pop, 'ELO':elo}, columns=['Name','ELO'])
+df_init = pd.DataFrame({'Name':init_pop, 'ELO':elo}, columns=['Name','ELO'])
 df_init['Wins'] = 0
 df_init['Losses'] = 0
 df_init['Total_Matches']=0
@@ -322,38 +446,10 @@ df_init['Total_Matches']=0
 list_df_gen.append(df_init)
 ratio=[]
     
-for i in np.arange(num_generations):
-    print("Generation : "+str(i))
-    #fight chars in round robbin
-    round_robin_parallel(current_pop, i)
-    #m = round_robin(current_pop,i)
-    #Sort our current pupulation interms of ELO
-    df_sorted = list_df_gen[i].sort_values('ELO', ascending = False)
-    #print(df_sorted.head())
-    #Get last elo
-    v = df_sorted.iloc[-1].ELO
-    ratio.append(v)
 
-    #Only replace population if were not on the last generation
-    if i < num_generations-1:        
-        #hah! Get it?
-        new_pop = nu_gen(df_sorted, len(df_sorted),i+1)
-        #replace current pop with new pop
-        current_pop = new_pop.Name.tolist()
-        #keep track
-        list_df_gen.append(new_pop)
-    #On last generation... do some stuff with the list of dfs
-    elif i == num_generations-1:
-        print("DONE!")
-        plt.scatter(range(0,len(ratio)), ratio)
-        plt.title("Lowest ELO per Generation")
-        plt.xlabel("Generation")
-        plt.ylabel("ELO")
-        plt.show()
-    
+#evolve_std(num_generations, init_pop)
+evolve_on_cloud(num_generations, init_pop)
 
-    
-    
     
     
     

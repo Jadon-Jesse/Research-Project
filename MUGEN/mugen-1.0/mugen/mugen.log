@@ -2,7 +2,7 @@
 M.U.G.E.N ver 1.00 (2010.06.29) status log
 ------------------------------------------
 Parsing command line...
-Command line: C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe -log -p1 -p2 -p1.ai -p2.ai -rounds -nojoy -nosound
+Command line: C:/Users/Jadon/Work Space 4Y/RP/MUGEN/mugen-1.0/mugen/mugen.exe -log -p1 -p2 -p1.ai -p2.ai -rounds -nosound
 Parse command line OK
 Initializing...
 Allocating game variables
@@ -17,6 +17,7 @@ Initializing font...OK
 Initializing game variables...OK
 Loading system fonts...OK
 Loading options...
+Initializing pads...failed
 Reinitializing input engine...OK
 Remapping keys...OK
 Reinitializing input engine...OK
@@ -61,19 +62,6 @@ Initializing stage...
   Loading BG...OK
   Allocating helpers...OK
 Stage initialized OK
-Loading character chars/dArwIn_G3_0/dArwIn_G3_0.def...
-  Loading info...OK
-  Loading cmd command set dArwIn_G3_0.cmd...OK
-  Loading cns kfm.cns...OK
-  Loading cmd state entry dArwIn_G3_0.cmd...OK
-  Loading common states common1.cns...OK
-  Unloading command names...OK
-  Loading sff kfm.sff...OK
-  Loading anim kfm.air...OK
-  Loading pals...OK
-  Loading learned AI kfm.ai...OK
-  3146 expressions (1117 on trigger lines)
-Character dArwIn_G3_0.def loaded OK
 Loading character chars/dArwIn_G4_0/dArwIn_G4_0.def...
   Loading info...OK
   Loading cmd command set dArwIn_G4_0.cmd...OK
@@ -87,18 +75,31 @@ Loading character chars/dArwIn_G4_0/dArwIn_G4_0.def...
   Loading learned AI kfm.ai...OK
   3156 expressions (1127 on trigger lines)
 Character dArwIn_G4_0.def loaded OK
+Loading character chars/dArwIn_G9_0/dArwIn_G9_0.def...
+  Loading info...OK
+  Loading cmd command set dArwIn_G9_0.cmd...OK
+  Loading cns kfm.cns...OK
+  Loading cmd state entry dArwIn_G9_0.cmd...OK
+  Loading common states common1.cns...OK
+  Unloading command names...OK
+  Loading sff kfm.sff...OK
+  Loading anim kfm.air...OK
+  Loading pals...OK
+  Loading learned AI kfm.ai...OK
+  3159 expressions (1130 on trigger lines)
+Character dArwIn_G9_0.def loaded OK
 Start of game loop
 End of game loop
-Total time: 57.02s
-Total frames: 3422 	Skipped frames: 74
-Avg game rate: 60.01
-Avg frame rate: 58.72
+Total time: 28.49s
+Total frames: 1710 	Skipped frames: 0
+Avg game rate: 60.02
+Avg frame rate: 60.02
 
 Returned from main loop
 Deinitializing...
-Frames      : 3422
-Time elapsed: 57.100 sec
-ticks: 5710, tps: 100, start 9, end 5719
+Frames      : 1710
+Time elapsed: 28.530 sec
+ticks: 2853, tps: 100, start 5, end 2858
 
 Clearing player cache...OK
 Freeing character info...OK
@@ -114,5 +115,3 @@ Deinitializing sound...OK
 Successful program termination.
 
 Log file successfully closed.
-sed.
-ed.

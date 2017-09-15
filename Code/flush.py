@@ -30,7 +30,14 @@ def kill_darwin():
     print()
     print("Done!")
     
+def kill_logs():
+    print("Removing logs..")
+    files = glob.glob("C:/Users/Jadon/Work Space 4Y/RP/Code/Logs/*")
+    for f in files:
+        os.remove(f)
+    
 
 
 kill_darwin()
 my_super_copy()
+kill_logs()
