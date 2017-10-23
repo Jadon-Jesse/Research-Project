@@ -1,0 +1,22 @@
+;---------------------------------------------------------------------------
+[Statedef 10000]
+type    =U
+movetype= I
+physics = N
+velset = 0,0
+anim=10000
+sprpriority=1
+;Level system HUD config
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = 1 ;X OFFSET
+v = 50    ;fv = 
+value = 0
+[State 0, ParentVarSet]
+type = ParentVarSet
+trigger1 = 1 ;Y OFFSET
+v = 51    ;fv = 
+value = 0
+[State 0, DestroySelf]
+type = DestroySelf
+trigger1 =roundstate=2

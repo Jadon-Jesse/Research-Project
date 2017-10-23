@@ -1,0 +1,28 @@
+[Info]
+name = "Ryu"
+displayname = "Ryu"
+versiondate = 5,24,2012
+mugenversion = 1.0
+author = "mouser-MvC2"
+editor       = "REDHOT"
+pal.defaults = 1,2,3,4,5,6
+
+[Files]
+cmd      = CMND/Ryu.cmd
+cns      = CNS/Ryu.cns
+st       = CNS/Ryu.cns
+st1      = CNS/config.txt
+stcommon = CNS/common1.cns
+sprite   = SPRITES/Ryu.sff
+anim     = ANIMATIONS/Ryu.air
+sound    = SOUNDS/Ryu.snd
+pal1     = PALETTES/Ryu_01.act
+pal2     = PALETTES/Ryu_02.act
+pal3     = PALETTES/Ryu_03.act
+pal4     = PALETTES/Ryu_04.act
+pal5     = PALETTES/Ryu_05.act
+pal6     = PALETTES/Ryu_06.act
+
+[Arcade]
+intro.storyboard = 
+ending.storyboard = 
